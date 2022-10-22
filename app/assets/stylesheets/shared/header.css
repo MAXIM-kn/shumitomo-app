@@ -1,0 +1,113 @@
+.header-area {
+  width: 100vw;
+}
+
+.header-contents {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-name {
+  height: 100px;
+}
+
+.title-icon {
+  height: 100%;
+  width: 400px;
+}
+
+.category {
+  line-height: 100px;
+  display: inline-block;
+  padding: 0 50px;
+  margin-left: 50px;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.category:hover {
+  background-color: rgba(28, 218, 228, 0.629);
+}
+
+.devise-lists {
+  display: flex;
+}
+
+.search {
+  display: inline-block;
+  line-height: 100px;
+  font-size: 25px;
+  font-family: 'Mochiy Pop One', sans-serif;
+  padding: 0 50px;
+  margin-left: 50px;
+  border-radius: 10px;
+}
+
+.search:hover {
+  background-color: rgba(28, 218, 228, 0.629);
+}
+
+li {
+  list-style: none;
+}
+
+.login {
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  width: 200px;
+  font-size: 25px;
+  font-family: 'Mochiy Pop One', sans-serif;
+  margin-right: 30px;
+  border-radius: 10px;
+}
+
+.login:hover {
+  background-color: orange;
+}
+
+.sign-up {
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  width: 200px;
+  font-size: 25px;
+  font-family: 'Mochiy Pop One', sans-serif;
+  border-radius: 10px;
+}
+
+.sign-up:hover {
+  background-color: orange;
+}
+
+.user-nickname {
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  width: 200px;
+  font-size: 25px;
+  font-family: 'Mochiy Pop One', sans-serif;
+  margin-right: 30px;
+  border-radius: 10px;
+}
+
+.user-nickname:hover {
+  background-color: orange;
+}
+
+.logout {
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  width: 200px;
+  font-size: 25px;
+  font-family: 'Mochiy Pop One', sans-serif;
+  border-radius: 10px;
+}
+
+.logout:hover {
+  background-color: orange;
+}
+
