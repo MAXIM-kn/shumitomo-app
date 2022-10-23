@@ -1,0 +1,23 @@
+.footer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  background-color: rgb(224, 222, 222);
+  color: gray;
+}
+
+.room-frends {
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin: 10px 45px 0 0;
+}
+
+.frends {
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin-left: 40px;
+}
