@@ -1,0 +1,119 @@
+.bg-image {
+  background-image: url(wallpaper.jpg);
+  background-color:rgba(255,255,255,0.6);
+	background-blend-mode:lighten;
+}
+
+.heading-text {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: 50px;
+  font-weight: 600;
+  color: rgb(34, 183, 183);
+  text-shadow: 2px 3px 3px #656567;
+}
+
+.heading {
+  margin: 100px 0 30px 0;
+}
+
+.heading-next {
+  margin-bottom: 60px;
+}
+
+.lead-text {
+  color: rgb(216, 65, 188);
+}
+
+.lead-img {
+  display: inline-block;
+  margin: 25px 0 25px 660px;
+  width: 100px;
+  height: 100px;
+}
+
+.wrapper {
+  background-color: rgb(242, 243, 231);
+}
+
+.topics-contents {
+  font-size: 30px;
+  padding: 50px 20px 20px 20px;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(228, 152, 39);
+}
+
+.topics-items {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 60px;
+}
+
+.content {
+  width: 250px;
+  height: 300px;
+}
+
+.item-image {
+  width: 250px;
+  height: 200x;
+}
+
+.info {
+  font-size: 20px;
+  color: rgb(34, 183, 183);
+}
+
+.usage-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  padding-top: 40px;
+  font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.procedure-contents {
+  width: 700px;
+  margin: 70px 50px 0 280px;
+  background-color: rgb(251, 252, 252);
+}
+
+.text {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 20px;
+  color: rgb(34, 183, 183);
+}
+
+.number {
+  color: lightpink;
+}
+
+.procedure-end-text {
+  text-align: center;
+  margin: 50px 50px 0px 50px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.procedure-link {
+  width: 700px;
+  line-height: 80px;
+  font-weight: 600;
+  display: block;
+  color: rgb(200, 123, 193);
+  background-color: rgb(202, 236, 236);
+  border-radius: 30px;
+  margin-bottom: 100px;
+}
+
+.usage {
+  background-color: rgb(231, 237, 192);
+}
+
+.procedure-link:hover {
+  background-color: aqua;
+}

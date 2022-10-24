@@ -1,0 +1,30 @@
+<header class="header-area">
+  <div class="header-contents">
+    <div class="title-name">
+      <%= link_to image_tag("title-logo.jpg", class:"title-icon"), "/" %>
+      <div class="category", id="category">カテゴリー</div>
+      <div class="search", id="search">検索</div>
+    </div>
+    <div class="devise-lists">
+      <%# if user_signed_in? %>
+       <%# <li><%= link_to 'hoge', "#", class: "user-nickname" ></li> %>
+       <%# <li><%= link_to 'ログアウト', "#", class: "logout" ></li> %>
+      <%# else %>
+        <li><%= link_to 'ログイン', "#", class: "login" %></li>
+        <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+      <%# end %>
+    </div>
+  </div>
+  <ul class="category-lists hidden" id="category-lists">
+    <li><%= link_to 'スポーツ', "#", class: "sports set"%></li>
+    <li><%= link_to 'ゲーム', "#", class: "games set"%></li>
+    <li><%= link_to '料理', "#", class: "cooks set"%><li>
+    <li><%= link_to 'アウトドア', "#", class: "outdoors set"%><li>
+    <li><%= link_to '音楽', "#", class: "musics set"%></li>
+    <li><%= link_to '友達', "#", class: "frends set"%></li>
+  </ul>
+  <form class="search-form hidden" action="https://shumitomo-app.herokuapp.com/" method="get" id="search-form">
+    <input type="search" class='input-box' placeholder='キーワードを入力'>
+    <input type="submit" name="submit" value="検索" class="submit-search">
+  </form>
+</header>
