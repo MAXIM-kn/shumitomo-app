@@ -1,10 +1,12 @@
 <%= render "shared/header" %>
 <div class="main">
-  <div class="heading-text">
-    <p class="heading">簡単に!</p>
-    <p class="heading-next">あっという間に！</p>
-    <p>Shumitomoなら<span class="lead-text">共通の趣味</span>の友達を作れる</p>
-    <%= image_tag("lead.png", class:"lead-img") %>
+  <div class="bg-image">
+    <div class="heading-text">
+      <p class="heading">簡単に!</p>
+      <p class="heading-next">あっという間に！</p>
+      <p>Shumitomoなら<span class="lead-text">共通の趣味</span>の友達を作れる</p>
+      <%= image_tag("lead.png", class:"lead-img") %>
+    </div>
   </div>
   <div class="wrapper">
     <div class="topics-contents">
@@ -25,16 +27,20 @@
       </div>
     </div>
   </div>
-  <div class="usage-title">
-    Shumitomoの使い方
+  <div class="usage">
+    <div class="usage-title">
+      Shumitomoの使い方
+    </div>
+    <div class="procedure-contents">
+      <ul>
+        <li class="text"><span class="number">①</span>：まずはサイトに登録</li>
+        <li class="text"><span class="number">②</span>：ルーム検索してチャットに参加<br>　※ルームを投稿して参加を待つのもアリ</li>
+        <li class="text"><span class="number">③</span>：会話に参加して友達になろう！</li>
+      </ul>
+    </div>
+    <div class="procedure-end-text">
+      <%= link_to 'さあ！はじめてみよう！！', "#", class: 'procedure-link' %>
+    </div>
   </div>
-  <div class="procedure-contents">
-    <ul>
-      <li class="text"><span class="number">①</span>：まずはサイトに登録</li>
-      <li class="text"><span class="number">②</span>：ルーム検索してチャットに参加<br>　※ルームを投稿して参加を待つのもアリ</li>
-      <li class="text"><span class="number">③</span>：会話に参加して友達になろう！</li>
-    </ul>
-  </div>
-  <div class="procedure-end-text"></div>
 </div>
 <%= render "shared/footer" %>
