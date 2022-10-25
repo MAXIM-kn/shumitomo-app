@@ -1,4 +1,5 @@
 <%= render "shared/header" %>
+
 <div class="main">
   <div class="bg-image">
     <div class="heading-text">
@@ -39,8 +40,9 @@
       </ul>
     </div>
     <div class="procedure-end-text">
-      <%= link_to 'さあ！はじめてみよう！！', "#", class: 'procedure-link' %>
+      <%= link_to 'さあ！はじめてみよう！！', new_user_registration_path, class: 'procedure-link' %>
     </div>
   </div>
 </div>
+
 <%= render "shared/footer" %>

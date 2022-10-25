@@ -1,0 +1,82 @@
+.title-content {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up-box {
+  display: flex;
+  justify-content: center;
+}
+
+.heading {
+  width: 400px;
+  text-align: center;
+  border-bottom: solid 3px rgb(186, 182, 182);
+  font-size: 35px;
+  padding: 0 30px 30px 30px;
+  font-weight: 600;
+}
+
+.input-content {
+  display: flex;
+  margin: 50px 0 0 480px;
+}
+
+.form-text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.indispensable {
+  font-size: 20px;
+  color: red;
+}
+
+.input-area {
+  width: 480px;
+  padding: 10px;
+  margin: 30px 0 0 480px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.any {
+  font-size: 20px;
+  color: blue;
+}
+
+.profile-input-area {
+  width: 600px;
+  height: 150px;
+  padding: 10px;
+  margin: 30px 0 70px 415px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.profile-input-content {
+  display: flex;
+  margin: 50px 0 0 412px;
+}
+
+.register-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.register-botton {
+  width: 150px;
+  height: 80px;
+  font-size: 25px;
+  font-weight: 600  ;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(93, 172, 245);
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.register-botton:hover {
+  background-color: blue;
+}
