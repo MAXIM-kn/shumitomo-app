@@ -113,7 +113,7 @@ li {
 }
 
 .logout:hover {
-  background-color: orange;
+  background-color: rgb(160, 235, 167);
   transition: background-color .5s;
 }
 
@@ -145,7 +145,7 @@ li {
 .input-box {
   width: 600px;
   height: 45px;
-  border: solid 2px blue;
+  border: solid 2px rgb(93, 172, 245);
   outline: none;
   border-radius: 20px;
   padding: 10px;
@@ -161,8 +161,12 @@ li {
   margin-left: 20px;
   border: solid 2px white;
   outline: none;
-  background-color: rgb(25, 81, 234);
+  background-color: rgb(93, 172, 245);
   color: white;
   font-size: 18px;
   border-radius: 15px;
+}
+
+.submit-search:hover {
+  background-color: blue;
 }

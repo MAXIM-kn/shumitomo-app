@@ -1,0 +1,149 @@
+.my-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+ 
+.my-heading {
+  width: 800px;
+  text-align: center;
+  border-bottom: solid 3px rgb(186, 182, 182);
+  font-size: 35px;
+  padding: 0 30px 30px 30px;
+  font-weight: 600;
+}
+
+.user-image-area {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.user-image {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.user-image-outer {
+  height: 100%;
+  width: 350px;
+  text-align: center;
+  background-color: rgb(230, 230, 230);
+}
+
+.image-item {
+  padding-top: 110px;
+  font-size: 35px;
+  letter-spacing: 3px;
+  color: gray;
+}
+
+.profile-text {
+  text-align: center;
+  margin-top: 60px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.profile-area {
+  display: flex;
+  justify-content: center;
+}
+
+.profile {
+  width: 800px;
+  height: 200px;
+  margin-top: 50px;
+  padding: 12px;
+  font-size: 25px;
+  border: 4px solid rgb(229, 239, 239);
+  border-radius: 10px;
+}
+
+.selection-field {
+  display: flex;
+  margin-top: 20px;
+}
+
+.follower {
+  width: 100px;
+  margin-left: 312px;
+  font-size: 20px;
+  padding: 7px;
+  text-align: center;
+  color: white;
+  background-color: rgb(93, 172, 245);
+  border-radius: 20px;
+}
+
+.followed {
+  width: 130px;
+  margin-left: 50px;
+  font-size: 20px;
+  padding: 7px;
+  text-align: center;
+  color: white;
+  background-color: rgb(93, 172, 245);
+  border-radius: 20px;
+}
+
+.follower-count-box {
+  width: 40px;
+  margin-left: 20px;
+  background-color: rgb(93, 172, 245);
+  border-radius: 10px;
+}
+
+.email-box {
+  margin-left: 80px;
+}
+
+.email-image {
+  width: 40px;
+  height: 40px;
+}
+
+.followed-botton-area {
+  width: 150px;
+  margin-left: 70px;
+  font-size: 20px;
+  padding: 7px;
+  text-align: center;
+  color: white;
+  background-color: rgb(93, 172, 245);
+  border-radius: 20px;
+}
+
+.room-wrapper {
+  width: 100%;
+  margin-top: 100px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(238, 240, 240);
+}
+
+.room-area {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.room-text {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.room {
+  width: 100%;
+  height: 400px;
+}

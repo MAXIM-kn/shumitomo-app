@@ -1,8 +1,9 @@
 <%= render "shared/header" %>
+
 <div class="main">
   <div class="bg-image">
     <div class="heading-text">
-      <p class="heading">簡単に!</p>
+      <p class="heading-top">簡単に!</p>
       <p class="heading-next">あっという間に！</p>
       <p>Shumitomoなら<span class="lead-text">共通の趣味</span>の友達を作れる</p>
       <%= image_tag("lead.png", class:"lead-img") %>
@@ -39,8 +40,9 @@
       </ul>
     </div>
     <div class="procedure-end-text">
-      <%= link_to 'さあ！はじめてみよう！！', "#", class: 'procedure-link' %>
+      <%= link_to 'さあ！はじめてみよう！！', new_user_registration_path, class: 'procedure-link' %>
     </div>
   </div>
 </div>
+
 <%= render "shared/footer" %>

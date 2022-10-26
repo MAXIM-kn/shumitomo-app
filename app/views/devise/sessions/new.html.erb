@@ -1,0 +1,25 @@
+<%= render "shared/second-header"%>
+
+<div class="login-box">
+  <div class="heading">ログイン</div>
+</div>
+<%= form_with model: @user, url: user_session_path, class: 'registration-from', local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="form-sign-input">
+    <div class="input-content">
+      <label class="form-text">メールアドレス</label>
+      <span class="indispensable">（必須）</span>
+    </div>
+    <%= f.email_field :email, class:"input-area", placeholder:"メールアドレスを入力して下さい", autofocus: true %>
+  </div>
+  <div class="form-sign-input">
+    <div class="input-content">
+      <label class="form-text">パスワード</label>
+      <span class="indispensable">（必須）</span>
+    </div>
+    <%= f.password_field :password, class:"input-area", placeholder:"※半角英数字含む６文字以上で入力して下さい" %>
+  </div>
+  <div class="login-btn">
+    <%= f.submit "ログイン" ,class:"login-botton" %>
+  </div>
+<% end %>
