@@ -9,7 +9,7 @@
 | nickname           | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
-| profile            | string |             |
+| profile            | text   |             |
 
 ### Association
 
@@ -23,16 +23,16 @@
 
 ## chat_rooms テーブル
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| name          | string | null: false |
-| introduction  | string | null: false |
-| genre_id      | string | null: false |
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| name          | string  | null: false |
+| introduction  | text    | null: false |
 
 ### Association
 
 - has_many :chat_room_users
 - has_many :chat_messages
+- has_many :categories, through: :chat_room_categories
 
 ## chat_room_users テーブル
 
@@ -103,3 +103,27 @@
 ### Association
 
 - belongs_to :user
+
+## categories テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| genre_id    | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :chat_rooms, through: :chat_room_categories
+
+## chat_room_categories テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| chat_room_id   | references | null: false, foreign_key: true |
+| category_id    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :chat_rooms
+- belongs_to :categories
+
+

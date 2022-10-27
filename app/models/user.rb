@@ -7,4 +7,7 @@ class User < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX
 
   has_one_attached :image
+  has_many :chat_room_users
+  has_many :chat_rooms, through: :chat_room_users
+  
 end
