@@ -1,0 +1,139 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(234, 239, 239);
+}
+
+.room-main {
+  width: 1200px;
+  margin: 100px 0;
+  background-color: white;
+  border-radius: 10px;
+} 
+
+.room-contents {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.room-content {
+  display: flex;
+  justify-content: center;
+}
+
+.room-filed {
+  display: flex;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.input-name-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.required {
+  font-size: 25px;
+  font-weight: 600;
+  color: red;
+}
+
+.room-name-input {
+  height: 50px;
+  font-size: 25px;
+  padding: 10px;
+  border: 2px solid rgb(229, 239, 239);
+  border-radius: 10px;
+}
+
+.category {
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.category-any {
+  color: blue
+}
+
+.image-form {
+  font-size: 20px;
+  width: 200px;
+  margin-right: 100px;
+  display: block;
+}
+
+.select-inner {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 50px;
+}
+
+.select-area {
+  display: flex;
+  margin: 50px 0 0 200px;
+}
+
+.category-area {
+  display: flex;
+}
+
+.select-image {
+  line-height: 40px;
+  border: 2px solid green;
+  padding: 10px;
+  margin-left: 300px;
+  border-radius: 10px;
+}
+
+.select-box {
+  width: 120px;
+  height: 60px;
+  border: 2px solid rgb(229, 239, 239);
+  border-radius: 10px;
+  margin-left: 220px;
+}
+
+.image-form {
+  display: none;
+}
+
+.image-input-btn {
+  color: green;
+  font-size: 20px;
+}
+
+.introduction-info {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.introduction {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.introduction-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.introduction-text {
+  width: 800px;
+  height: 200px;
+  padding: 12px;
+  font-size: 25px;
+  border: 4px solid rgb(229, 239, 239);
+  border-radius: 10px;
+  margin-bottom: 50px;
+}

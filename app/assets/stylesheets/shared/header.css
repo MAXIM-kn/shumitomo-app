@@ -1,5 +1,4 @@
 .header-area {
-  width: 100vw;
 }
 
 .header-contents {
@@ -17,38 +16,8 @@
   width: 400px;
 }
 
-.category {
-  line-height: 100px;
-  display: inline-block;
-  padding: 0 50px;
-  margin-left: 50px;
-  font-family: 'Mochiy Pop One', sans-serif;
-  font-size: 20px;
-  border-radius: 10px;
-}
-
-.category:hover {
-  background-color: rgb(171, 247, 180);
-  transition: background-color .5s;
-}
-
 .devise-lists {
   display: flex;
-}
-
-.search {
-  display: inline-block;
-  line-height: 100px;
-  font-size: 20px;
-  font-family: 'Mochiy Pop One', sans-serif;
-  padding: 0 50px;
-  margin-left: 50px;
-  border-radius: 10px;
-}
-
-.search:hover {
-  background-color: rgb(171, 247, 180);
-  transition: background-color .5s;
 }
 
 li {
@@ -118,20 +87,20 @@ li {
 }
 
 .category-lists {
-  width: 100vw;
   height: 40px;
   display: flex;
-  align-items: center;
   text-align: center;
+  align-items: center;
   font-weight: 600;
   color: rgb(128, 141, 55);
   background-color: rgb(212, 241, 241);
+  margin-left: 1px;
 }
 
 .set {
-  width: 16vw;
+  width: 237px;
   line-height: 40px;
-  display: block;
+  display: inline-block;
 }
 
 .set:hover {
@@ -143,13 +112,13 @@ li {
 }
 
 .input-box {
-  width: 600px;
+  width: 400px;
   height: 45px;
   border: solid 2px rgb(93, 172, 245);
   outline: none;
   border-radius: 20px;
   padding: 10px;
-  margin-left: 80px;
+  margin-top: 30px;
   font-size: 20px;
 }
 
@@ -169,4 +138,16 @@ li {
 
 .submit-search:hover {
   background-color: blue;
+}
+
+.category-lists a {
+  color: rgb(128, 141, 55);
+}
+
+a {
+  color: black;
+}
+
+.frends {
+  height: 40px;
 }

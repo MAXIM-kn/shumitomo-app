@@ -39,9 +39,15 @@
         <li class="text"><span class="number">③</span>：会話に参加して友達になろう！</li>
       </ul>
     </div>
-    <div class="procedure-end-text">
-      <%= link_to 'さあ！はじめてみよう！！', new_user_registration_path, class: 'procedure-link' %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="procedure-end-text">
+        <%= link_to 'ルームを作る', new_chat_room_path, class: 'procedure-link' %>
+      </div>
+    <% else %>
+       <div class="procedure-end-text">
+        <%= link_to '新規登録はこちらから', new_user_registration_path, class: 'procedure-link' %>
+      </div>
+    <% end %>
   </div>
 </div>
 
