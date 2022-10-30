@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_27_060732) do
+ActiveRecord::Schema.define(version: 2022_10_27_054052) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -37,15 +37,6 @@ ActiveRecord::Schema.define(version: 2022_10_27_060732) do
     t.integer "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "chat_room_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "chat_room_id", null: false
-    t.bigint "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_chat_room_categories_on_category_id"
-    t.index ["chat_room_id"], name: "index_chat_room_categories_on_chat_room_id"
   end
 
   create_table "chat_room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,8 +70,6 @@ ActiveRecord::Schema.define(version: 2022_10_27_060732) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "chat_room_categories", "categories"
-  add_foreign_key "chat_room_categories", "chat_rooms"
   add_foreign_key "chat_room_users", "chat_rooms"
   add_foreign_key "chat_room_users", "users"
 end
