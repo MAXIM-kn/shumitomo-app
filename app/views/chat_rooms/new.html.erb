@@ -1,0 +1,52 @@
+<%= render "shared/second-header"%>
+
+<div class="container">
+  <div class="room-main">
+    <div class="heading-area">
+      <div class="heading">ルーム作成</div>
+    </div>
+    <%= form_with model: @chat_room_category, url: chat_rooms_path, class: 'registration-from', local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class ="room-contents">
+        <div class="room-filed">
+          <p class="room-name-text">ルーム名</p>
+          <span class="required">（必須）</span>
+        </div>
+      </div>
+      <div class="input-name-area">
+        <%= f.text_field :name, class:"room-name-input", placeholder:"ルーム名を記入して下さい", maxlength:"30" %>
+      </div>
+      <div class="select-area">
+        <div class="select-inner">
+          <p class="select-text">ルーム画像の設定</p>
+          <span class="category-any">（任意）</span>
+        </div>
+        <div class="select-inner">
+          <p class="select-text">カテゴリーの選択</p>
+          <span class="required">（必須）</span>
+        </div>
+      </div>
+      <div class ="category-area">
+        <div class="select-image">
+          <%= f.label :image, "画像をアップロード", class: "image-input-btn", id:"item-image"%>
+          <%= f.file_field :image, class: "image-form"%>
+
+        </div>
+        <div class="categories">
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </div>
+      </div>
+        <div class="introduction">
+          <p class="introduction-info">ルーム紹介</p>
+          <span class="required">（必須）</span>
+        </div>
+        <div class="introduction-area">
+            <%= f.text_area :introduction, class:"introduction-text", placeholder:"ルームの内容を記入して下さい" %>
+        </div>
+        <input name="chat_room[user_id][]" type="hidden" value=<%= current_user.id %>>
+        <div class="btn-area">
+          <%= f.submit "投稿する" ,class:"click-botton" %>
+        </div>
+    <% end %>
+  </div>
+</div>

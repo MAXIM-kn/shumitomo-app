@@ -1,4 +1,4 @@
-.sign-up-box {
+.heading-area {
   display: flex;
   justify-content: center;
   margin-top: 80px;
@@ -56,16 +56,17 @@
   margin: 50px 0 0 412px;
 }
 
-.register-btn {
+.btn-area {
   display: flex;
   justify-content: center;
 }
 
-.register-botton {
+.click-botton {
   width: 150px;
   height: 80px;
   font-size: 25px;
-  font-weight: 600  ;
+  font-weight: 600;
+  border: none;
   border-radius: 10px;
   color: white;
   background-color: rgb(93, 172, 245);
@@ -73,7 +74,7 @@
   margin-bottom: 100px;
 }
 
-.register-botton:hover {
+.click-botton:hover {
   background-color: blue;
 }
 
@@ -95,6 +96,7 @@
   font-size: 25px;
   font-weight: 600  ;
   border-radius: 10px;
+  border: none;
   color: white;
   background-color: rgb(93, 172, 245);
   text-align: center;

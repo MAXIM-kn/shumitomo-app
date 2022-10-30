@@ -1,7 +1,8 @@
 .bg-image {
   background-image: url(wallpaper.jpg);
-  background-color:rgba(255,255,255,0.6);
-	background-blend-mode:lighten;
+  background-size: cover;
+  background-color:rgba(255,255,255,0.5);
+	background-blend-mode: lighten;
 }
 
 .heading-text {
@@ -77,7 +78,9 @@
 .procedure-contents {
   width: 700px;
   margin: 70px 50px 0 280px;
-  background-color: rgb(251, 252, 252);
+  background-color: white;
+  border: 4px solid rgb(229, 239, 239);
+  border-radius: 10px;
 }
 
 .text {
@@ -93,27 +96,31 @@
 
 .procedure-end-text {
   text-align: center;
-  margin: 50px 50px 0px 50px;
-  font-size: 50px;
+  margin: 50px 50px 0 50px;
+  font-size: 30px;
   display: flex;
   justify-content: center;
+  padding-top: 40px;
 }
 
 .procedure-link {
-  width: 700px;
+  width: 500px;
   line-height: 80px;
   font-weight: 600;
   display: block;
-  color: rgb(200, 123, 193);
-  background-color: rgb(202, 236, 236);
+  color: white;
+  background-color: rgb(93, 172, 245);
   border-radius: 30px;
   margin-bottom: 100px;
 }
 
 .usage {
-  background-color: rgb(231, 237, 192);
+  background-image: url(background);
+  background-color:rgba(255,255,255,0.4);
+  background-size:cover;
+  background-blend-mode: lighten;
 }
 
 .procedure-link:hover {
-  background-color: aqua;
+  background-color: blue
 }
