@@ -17,12 +17,9 @@
       <% end %>
     </div>
   </div>
-  <ul class="category-lists" id="category-lists">
-    <li><%= link_to 'スポーツ', "#", class: "sports set"%></li>
-    <li><%= link_to 'ゲーム', "#", class: "games set"%></li>
-    <li><%= link_to '料理', "#", class: "cooks set"%><li>
-    <li><%= link_to 'アウトドア', "#", class: "outdoors set"%><li>
-    <li><%= link_to '音楽', "#", class: "musics set"%></li> 
-    <li><%= link_to '友達', "#", class: "frend set"%></li>
+  <ul class="category-lists">
+    <% @genres.each do |category| %>
+      <li><%= link_to category.name, categories_path(category_id: category.id), class: "set"%></li>
+    <% end %>
   </ul>
 </header>
