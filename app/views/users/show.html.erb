@@ -8,16 +8,16 @@
     プロフィール画像
     <% if @user.image.present?%>
     <div class="user-image">
-      <div class="user-image-outer">
+      <div class="image-outer">
         <div class="image-item">
           <%= @user.image %>
         </div>
-       </div>
+      </div>
     </div>
     <% else %>
       <div class="user-image">
-        <div class="user-image-outer">
-           <p class="image-item">not<br>image<p>
+        <div class="image-outer">
+           <p class="image-item">no<br>image<p>
         </div>
       </div>
     <% end %>
@@ -54,7 +54,13 @@
   <div class="room-wrapper">
     <div class="room-area">
       <p class="room-text">投稿ルーム</p>  
-      <div class="room"></div>
+      <div class="room">
+        <% @chat_rooms.each do |chat_room| %>
+          <div class="room-name-output">
+            <%= link_to chat_room.name, chat_room_path(chat_room) %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <% if current_user.id && user_signed_in? %>
       <div class="room-area">

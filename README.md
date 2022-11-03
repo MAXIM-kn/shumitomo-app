@@ -30,9 +30,10 @@
 
 ### Association
 
+- has_many :users, through: :chat_room_users
 - has_many :chat_room_users
 - has_many :chat_messages
-- has_many :categories, through: :chat_room_categories
+- 
 
 ## chat_room_users テーブル
 
@@ -108,13 +109,14 @@
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| genre_id    | references | null: false, foreign_key: true |
+| genre_id    | inreger    | null: false                    |
 
 ### Association
 
+- has_many :chat_room_categories
 - has_many :chat_rooms, through: :chat_room_categories
 
-## chat_room_categories テーブル
+## chat_room_category_relation テーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
@@ -123,7 +125,7 @@
 
 ### Association
 
-- belongs_to :chat_rooms
-- belongs_to :categories
+- belongs_to :chat_room
+- belongs_to :category
 
 

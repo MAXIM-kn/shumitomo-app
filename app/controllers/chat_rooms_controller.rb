@@ -1,5 +1,9 @@
 class ChatRoomsController < ApplicationController
 
+  def index
+    @genres = Genre.where(:id => 2..8)
+  end
+
   def new
     @chat_room_category = ChatRoomCategory.new
   end
@@ -12,6 +16,10 @@ class ChatRoomsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @chat_room = ChatRoom.find(params[:id])
   end
 
   private
