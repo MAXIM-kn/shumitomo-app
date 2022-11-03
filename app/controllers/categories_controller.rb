@@ -1,9 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    
-    @categories = Category.all
-    @chat_rooms = ChatRoom.where(category_id: params[:category_id])
+    @genres = Genre.where(:id => 2..8)
+    @chat_rooms = ChatRoom.where(genre_id: params[:category_id])
   end
-
 end

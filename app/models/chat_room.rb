@@ -5,6 +5,6 @@ class ChatRoom < ApplicationRecord
   has_one_attached :image
   has_many :chat_room_users
   has_many :users, through: :chat_room_users
-  has_many :category
+  belongs_to :category
   
 end

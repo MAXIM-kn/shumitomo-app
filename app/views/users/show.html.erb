@@ -8,16 +8,16 @@
     プロフィール画像
     <% if @user.image.present?%>
     <div class="user-image">
-      <div class="user-image-outer">
+      <div class="image-outer">
         <div class="image-item">
           <%= @user.image %>
         </div>
-       </div>
+      </div>
     </div>
     <% else %>
       <div class="user-image">
-        <div class="user-image-outer">
-           <p class="image-item">not<br>image<p>
+        <div class="image-outer">
+           <p class="image-item">no<br>image<p>
         </div>
       </div>
     <% end %>

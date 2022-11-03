@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
   
-  belongs_to :chat_room
+  has_many :chat_rooms
   
 end
