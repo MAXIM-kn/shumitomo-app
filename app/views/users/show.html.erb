@@ -7,7 +7,7 @@
   <div class="user-image-area">
     プロフィール画像
     <% if @user.image.present?%>
-    <div class="user-image">
+    <div class="image-display">
       <div class="image-outer">
         <div class="image-item">
           <%= @user.image %>
@@ -15,9 +15,9 @@
       </div>
     </div>
     <% else %>
-      <div class="user-image">
-        <div class="image-outer">
-           <p class="image-item">no<br>image<p>
+      <div class="image-nill-display">
+        <div class="image-nill-outer">
+           <p class="image-nill-item">no<br>image<p>
         </div>
       </div>
     <% end %>

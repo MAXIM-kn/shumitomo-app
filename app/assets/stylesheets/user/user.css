@@ -20,7 +20,7 @@
   font-weight: 600;
 }
 
-.user-image {
+.image-nill-display {
   height: 300px;
   display: flex;
   justify-content: center;
@@ -28,14 +28,14 @@
   margin-top: 60px;
 }
 
-.image-outer {
+.image-nill-outer {
   height: 100%;
   width: 350px;
   text-align: center;
   background-color: rgb(230, 230, 230);
 }
 
-.image-item {
+.image-nill-item {
   padding-top: 95px;
   font-size: 35px;
   letter-spacing: 3px;

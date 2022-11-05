@@ -43,7 +43,7 @@
         <div class="introduction-area">
             <%= f.text_area :introduction, class:"introduction-text", placeholder:"ルームの内容を記入して下さい" %>
         </div>
-        <input name="chat_room[user_id][]" type="hidden" value=<%= current_user.id %>>
+        <input name="chat_room[user_id,owner_id][]" type="hidden" value=<%= current_user.id %>>
         <div class="btn-area">
           <%= f.submit "投稿する" ,class:"click-botton" %>
         </div>

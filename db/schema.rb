@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(version: 2022_11_02_131532) do
     t.text "introduction", null: false
     t.integer "genre_id", null: false
     t.bigint "category_id", null: false
+    t.bigint "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_chat_rooms_on_category_id"
+    t.index ["owner_id"], name: "index_chat_rooms_on_owner_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,4 +77,5 @@ ActiveRecord::Schema.define(version: 2022_11_02_131532) do
   add_foreign_key "chat_room_users", "chat_rooms"
   add_foreign_key "chat_room_users", "users"
   add_foreign_key "chat_rooms", "categories"
+  add_foreign_key "chat_rooms", "users", column: "owner_id"
 end
