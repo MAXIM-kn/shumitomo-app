@@ -62,7 +62,7 @@
         <% end %>
       </div>
     </div>
-    <% if current_user.id && user_signed_in? %>
+    <% if current_user.id == user_signed_in? %>
       <div class="room-area">
         <p class="room-text">参加ルーム</p>
         <div class="room"><div>

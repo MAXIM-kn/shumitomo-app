@@ -1,4 +1,5 @@
 class ChatRoomsController < ApplicationController
+  before_action :set_chat_room_user, only: [:show, :edit]
 
   def index
     @genres = Genre.where(:id => 2..8)
@@ -19,13 +20,22 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
-    @chat_room_user = ChatRoomUser.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
 
   def chat_room_category_params
     params.require(:chat_room_category).permit(:name, :introduction, :genre_id, :image, :user_id).merge(user_id: current_user.id, owner_id: current_user.id)
+  end
+
+  def set_chat_room_user
+    @chat_room_user = ChatRoomUser.find(params[:id])
   end
 
 end
