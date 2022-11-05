@@ -19,13 +19,13 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
-    @chat_room = ChatRoom.find(params[:id])
+    @chat_room_user = ChatRoomUser.find(params[:id])
   end
 
   private
 
   def chat_room_category_params
-    params.require(:chat_room_category).permit(:name, :introduction, :genre_id, :image, :user_id).merge(user_id: current_user.id)
+    params.require(:chat_room_category).permit(:name, :introduction, :genre_id, :image, :user_id).merge(user_id: current_user.id, owner_id: current_user.id)
   end
 
 end

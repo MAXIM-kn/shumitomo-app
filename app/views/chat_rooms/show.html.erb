@@ -1,0 +1,38 @@
+<%= render "shared/second-header"%>
+
+<div class="container">
+  <div class="room-main">
+    <div class="heading-area">
+      <div class="heading">
+        <%= @chat_room_user.chat_room.name %>
+      </div>
+    </div>
+    <div class="user-image-area">
+      投稿者：<%= link_to @chat_room_user.user.nickname, user_path(@chat_room_user.user) %>
+      <% if @chat_room_user.chat_room.image.present?%>
+        <div class="image-display">
+          <div class="image-outer">
+            <div class="image-item">
+              <%= image_tag @chat_room_user.chat_room.image.variant(resize: '500x500'), class: "image" %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="image-nill-display">
+            <div class="image-nill-outer">
+              <p class="image-nill-item">no<br>image<p>
+            </div>
+        </div>
+      <% end %>
+    </div>
+    <p class="profile-text">ルーム紹介</p>
+    <div class="profile-area">
+      <div class="profile">
+        <%= @chat_room_user.chat_room.introduction %>
+      </div>
+    </div>
+    <div class="participate-area">
+      <p class="participate-btn">参加する</p>
+    </div>
+  </div>
+</div>

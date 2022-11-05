@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def show
-    @chat_rooms = ChatRoom.all
     @user = User.find(params[:id])
+    @chat_rooms = @user.chat_rooms
   end
 
 end

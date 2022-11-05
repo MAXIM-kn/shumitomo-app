@@ -5,6 +5,7 @@ class CreateChatRooms < ActiveRecord::Migration[6.0]
       t.text   :introduction, null: false
       t.integer    :genre_id, null: false
       t.references :category, null: false, foreign_key: true
+      t.references :owner, foreign_key: { to_table: 'users' }
       t.timestamps
     end
   end
