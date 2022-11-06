@@ -9,11 +9,25 @@
     </div>
     <div class="user-image-area">
       投稿者：<%= link_to @chat_room_user.user.nickname, user_path(@chat_room_user.user) %>
+      <% if user_signed_in? %>
+        <% if current_user.id == @chat_room_user.user_id  %>
+          <div class="menu-area">
+            <p class="memu-text">メニュー</p>
+            <%= image_tag("menu.png", class:"menu-img", id:"menu") %>
+            <div class="hidden" id="menu-list">
+              <ul class="menu-list">
+                <li class="menu-btn"><%= link_to "編集", edit_chat_room_path(@chat_room_user), class:"menu-text" %></li>
+                <li class="menu-btn"><%= link_to "削除", "#", class:"menu-text" %></li>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
       <% if @chat_room_user.chat_room.image.present?%>
         <div class="image-display">
           <div class="image-outer">
             <div class="image-item">
-              <%= image_tag @chat_room_user.chat_room.image.variant(resize: '500x500'), class: "image" %>
+              <%= image_tag @chat_room_user.chat_room.image.variant(resize: '500x500'), class: "image-show" %>
             </div>
           </div>
         </div>
@@ -31,8 +45,14 @@
         <%= @chat_room_user.chat_room.introduction %>
       </div>
     </div>
-    <div class="participate-area">
-      <p class="participate-btn">参加する</p>
+    <div class="participate">
+      <% if user_signed_in? %>
+        <% unless current_user.id == @chat_room_user.user_id  %>
+          <div class="participate-area">
+            <p class="participate-btn">参加する</p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

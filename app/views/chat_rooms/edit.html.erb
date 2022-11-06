@@ -3,9 +3,9 @@
 <div class="container">
   <div class="room-main">
     <div class="heading-area">
-      <div class="heading">ルーム作成</div>
+      <div class="heading">ルーム編集</div>
     </div>
-    <%= form_with model: @chat_room_category, url: chat_rooms_path, class: 'registration-from', local: true do |f| %>
+    <%= form_with model: @chat_room_user, url: chat_room_path, method: :patch, class: 'registration-from', local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
       <div class ="room-contents">
         <div class="room-filed">
@@ -43,9 +43,9 @@
         <div class="introduction-area">
             <%= f.text_area :introduction, class:"introduction-text", placeholder:"ルームの内容を記入して下さい" %>
         </div>
-        <input name="chat_room[user_id][]" type="hidden" value=<%= current_user.id %>>
+        <input name="chat_room_user[user_id]" type="hidden" value=<%= current_user.id %>>
         <div class="btn-area">
-          <%= f.submit "投稿する" ,class:"click-botton" %>
+          <%= f.submit "更新する" ,class:"click-botton" %>
         </div>
     <% end %>
   </div>

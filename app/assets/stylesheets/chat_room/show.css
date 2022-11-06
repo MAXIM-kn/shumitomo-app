@@ -8,7 +8,6 @@
   width: 400px;
   font-size: 30px;
   padding: 10px;
-  margin-bottom: 50px;
   font-weight: 600;
   border-radius: 20px;
   text-align: center;
@@ -31,4 +30,51 @@
   width: 500px;
   text-align: center;
   padding-top: 30px;
+}
+
+.participate {
+  margin-bottom: 50px;
+}
+
+.menu-area {
+  font-size: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  color: rgb(24, 207, 207);
+}
+
+.menu-img {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.menu-list {
+  width: 200px;
+  display: flex;
+  margin-left: 20px;
+}
+
+.menu-btn {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.menu-btn:hover {
+  background-color: rgb(179, 237, 237);
+  border-radius: 10px;
+  transition: background-color .5s;
+}
+
+.menu-text {
+  color: rgb(24, 207, 207);
+  font-weight: 600;
+}
+
+.image-show {
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
