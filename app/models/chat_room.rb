@@ -7,4 +7,9 @@ class ChatRoom < ApplicationRecord
   has_many :users, through: :chat_room_users
   belongs_to :category
   
+  validates :name,         presence: :true
+  validates :introduction, presence: :true
+  validates :genre_id    , presence: :true
+  validates :genre_id, numericality: { other_than: 1, message: "can't be blank" }
+
 end
