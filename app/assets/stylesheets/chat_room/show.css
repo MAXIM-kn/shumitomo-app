@@ -71,3 +71,10 @@
   color: rgb(24, 207, 207);
   font-weight: 600;
 }
+
+.image-show {
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  margin-top: 10px;
+}

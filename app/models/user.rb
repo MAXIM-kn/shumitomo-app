@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many :chat_room_users
-  has_many :chat_rooms, through: :chat_room_users, source: :chat_room, foreign_key: :owner_id
+  has_many :chat_rooms, through: :chat_room_users
 
   
 end
