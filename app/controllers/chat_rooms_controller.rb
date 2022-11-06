@@ -1,5 +1,5 @@
 class ChatRoomsController < ApplicationController
-  before_action :set_chat_room_user, only: [:show, :edit]
+  before_action :set_chat_room_user, only: [:show, :edit, :destroy]
 
   def index
     @genres = Genre.where(:id => 2..8)
@@ -32,6 +32,16 @@ class ChatRoomsController < ApplicationController
       redirect_to chat_room_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @chat_room_user.user == current_user
+      @chat_room_user.destroy
+      flash[:success] = "削除が完了しました"
+      redirect_to root_path
+    else
+      render :index
     end
   end
 
