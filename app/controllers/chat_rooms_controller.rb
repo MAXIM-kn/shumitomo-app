@@ -42,7 +42,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def chat_room_category_params
-    params.require(:chat_room_category).permit(:name, :introduction, :genre_id, :image, :user_id).merge(user_id: current_user.id, owner_id: current_user.id)
+    params.require(:chat_room_category).permit(:name, :introduction, :genre_id, :image, :user_id, :owner_id).merge(user_id: current_user.id, owner_id: current_user.id)
   end
 
   def set_chat_room_user
