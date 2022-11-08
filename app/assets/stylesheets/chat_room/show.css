@@ -38,7 +38,7 @@
 
 .menu-area {
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   color: rgb(24, 207, 207);
@@ -51,7 +51,6 @@
 }
 
 .menu-list {
-  width: 200px;
   display: flex;
   margin-left: 20px;
 }
@@ -68,6 +67,8 @@
 }
 
 .menu-text {
+  width: 100px;
+  display: block;
   color: rgb(24, 207, 207);
   font-weight: 600;
 }

@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: 'chat_rooms#index'
   resources :users, only: [:show]
   resources :chat_rooms do
-    resources :messages, only: [:index]
+    member do
+      get :join
+    end
+    resources :chat_messages, only: [:index]
   end
   resources :categories, only: [:index]
 end
