@@ -1,7 +1,7 @@
 class ChatMessagesController < ApplicationController
 
-def index
-  
-end
+  def index
+    @chat_room_user = ChatRoomUser.where(params[:id])
+  end
 
 end

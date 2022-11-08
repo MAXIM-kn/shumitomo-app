@@ -1,0 +1,8 @@
+<div class="side-chat-wrap">
+  <div class="user-text">User list</div>
+  <div class="users-name-area">・ 
+    <% @chat_room_user.each do |c| %>
+      <%= c.user.nickname %>      
+    <% end %>
+  </div>
+</div>
