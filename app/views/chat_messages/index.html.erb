@@ -1,1 +1,18 @@
-<%= render "shared/side_chat" %>
+<div class="chat-main">
+  <div class="side-chat">
+    <%= render "shared/side_chat" %>
+  </div>
+  <div class="chat-wrap">
+    <div class="chat-header-menu">
+      <div class="room-title">
+        <%= @chat_room.name %>
+      </div>
+      <div class="top-page">
+        <%= link_to image_tag("home.png", class:"top-page-icon"), root_path %>
+        <div class="leaving">
+          <%= link_to "退室する", "#", class:"leaving-text" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
