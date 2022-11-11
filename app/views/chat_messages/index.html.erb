@@ -1,18 +1,40 @@
-<div class="chat-main">
+<div class="chat-container">
   <div class="side-chat">
     <%= render "shared/side_chat" %>
   </div>
   <div class="chat-wrap">
-    <div class="chat-header-menu">
-      <div class="room-title">
-        <%= @chat_room.name %>
-      </div>
-      <div class="top-page">
-        <%= link_to image_tag("home.png", class:"top-page-icon"), root_path %>
-        <div class="leaving">
-          <%= link_to "退室する", "#", class:"leaving-text" %>
+    <div class="chat-contents" >
+      <div class="chat-header-menu">
+        <div class="room-title">
+          <%= @chat_room.name %>
+        </div>
+        <div class="top-page">
+          <%= link_to image_tag("home.png", class:"top-page-icon"), root_path %>
+          <div class="leaving">
+            <%= link_to "退室する", "#", class:"leaving-text" %>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="chat_messages-wrap">
+      <%= render partial: "shared/chat_message", collection: @chat_messages %>
+    </div>
+    <div class="form-message">
+      <%= form_with model: [@chat_room, @chat_message], class: 'message-input', local: true do |f| %>
+        <label class="form-image">
+          <%= image_tag("photo.png", class:"form-photo-icon") %>
+          <%= f.file_field :image, class:"hidden" %>
+        </label>
+        <div class="message-area">
+          <%= f.text_field :content, class: 'form-message-input', placeholder: "メッセージを入力"%>
+        </div>
+        <label class="submit">
+          <span class="image-file">
+            <%= image_tag("submit.png", class:"submit-icon") %>
+          </span>
+          <%= f.submit "", class: 'hidden' %>
+        </label>
+      <% end %>
     </div>
   </div>
 </div>

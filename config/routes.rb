@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     member do
       get :join
     end
-    resources :chat_messages, only: [:index]
+    resources :chat_messages, only: [:index, :create]
   end
   resources :categories, only: [:index]
 end

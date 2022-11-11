@@ -1,0 +1,18 @@
+<div class="chat-message-user">
+  <div class="message-user-name">
+    <%= chat_message.user.nickname %>
+  </div>
+  <div class="message-time">
+    <%= l chat_message.created_at %>
+  </div>
+</div>
+<div class="chat-message-contents">
+  <div class="messages">
+    <% if chat_message.content.present? %>
+      <span class="message-content">
+        <%= chat_message.content %>
+      </span>
+    <% end %>
+    <%= image_tag chat_message.image.variant(resize: '500x500'), class: "chat-message-image" if chat_message.image.attached? %>
+  </div>
+</div>
