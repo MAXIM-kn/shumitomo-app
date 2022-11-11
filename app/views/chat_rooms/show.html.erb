@@ -4,26 +4,29 @@
   <div class="room-main">
     <div class="heading-area">
       <div class="heading">
-        <%= @chat_room_user.chat_room.name %>
+        <%= @chat_room.name %>
       </div>
     </div>
     <div class="user-image-area">
       投稿者：<%= link_to @chat_room_user.user.nickname, user_path(@chat_room_user.user) %>
       <% if user_signed_in? %>
-        <% if current_user.id == @chat_room_user.user_id  %>
-          <div class="menu-area">
-            <p class="memu-text">メニュー</p>
-            <%= image_tag("menu.png", class:"menu-img", id:"menu") %>
-            <div class="hidden" id="menu-list">
-              <ul class="menu-list">
-                <li class="menu-btn"><%= link_to "編集", edit_chat_room_path(@chat_room_user), class:"menu-text" %></li>
+        <div class="menu-area">
+          <p class="memu-text">Menu</p>
+          <%= image_tag("menu.png", class:"menu-img", id:"menu") %>
+          <div class="hidden" id="menu-list">
+            <ul class="menu-list">
+              <% if current_user.id == @chat_room_user.user_id %>
+                <li class="menu-btn"><%= link_to "編集", edit_chat_room_path(@chat_room), class:"menu-text" %></li>
                 <li class="menu-btn"><%= link_to "削除", chat_room_path(@chat_room_user), method: :delete, class:"menu-text" %></li>
-              </ul>
-            </div>
+              <% end %>
+              <% if  %>
+                <li class="menu-btn"><%= link_to "入室", chat_room_chat_messages_path(@chat_room), class:"menu-text" %></li>
+              <% end %>
+            </ul>
           </div>
-        <% end %>
+        </div>
       <% end %>
-      <% if @chat_room_user.chat_room.image.present?%>
+      <% if @chat_room_user.chat_room.image.present? %>
         <div class="image-display">
           <div class="image-outer">
             <div class="image-item">
@@ -49,7 +52,7 @@
       <% if user_signed_in? %>
         <% unless current_user.id == @chat_room_user.user_id  %>
           <div class="participate-area">
-            <p class="participate-btn">参加する</p>
+            <%= link_to "参加する", join_chat_room_path(@chat_room_user), class: "participate-btn" %>
           </div>
         <% end %>
       <% end %>

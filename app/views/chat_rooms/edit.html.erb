@@ -5,7 +5,7 @@
     <div class="heading-area">
       <div class="heading">ルーム編集</div>
     </div>
-    <%= form_with model: @chat_room_user, url: chat_room_path, method: :patch, class: 'registration-from', local: true do |f| %>
+    <%= form_with model: @chat_room, url: chat_room_path, method: :patch, class: 'registration-from', local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
       <div class ="room-contents">
         <div class="room-filed">

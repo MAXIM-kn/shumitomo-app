@@ -1,0 +1,9 @@
+<div class="side-chat-wrap">
+  <div class="user-text">User list</div>
+  <div class="users-name-area">
+    <% @chat_room_user.each do |c| %>
+      <%#= image_tag c.user.image, class: "image-users"%>
+      <%= link_to c.user.nickname, user_path(c.user), class:"user-names" %>      
+    <% end %>
+  </div>
+</div>
