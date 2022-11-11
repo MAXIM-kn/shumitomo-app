@@ -1,0 +1,2 @@
+class DirectRoomsController < ApplicationController
+end

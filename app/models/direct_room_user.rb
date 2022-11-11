@@ -1,0 +1,2 @@
+class DirectRoomUser < ApplicationRecord
+end
