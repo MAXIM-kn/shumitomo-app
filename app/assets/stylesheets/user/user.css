@@ -79,6 +79,7 @@
   color: white;
   background-color: rgb(93, 172, 245);
   border-radius: 20px;
+  font-family: 'Mochiy Pop One', sans-serif;
 }
 
 .followed {
@@ -90,6 +91,7 @@
   color: white;
   background-color: rgb(93, 172, 245);
   border-radius: 20px;
+  font-family: 'Mochiy Pop One', sans-serif;
 }
 
 .follower-count-box {
@@ -100,7 +102,7 @@
 }
 
 .email-box {
-  margin-left: 80px;
+  margin-left: 150px;
 }
 
 .email-image {
@@ -117,12 +119,13 @@
   color: white;
   background-color: rgb(93, 172, 245);
   border-radius: 20px;
+  font-family: 'Mochiy Pop One', sans-serif;
 }
 
 .room-wrapper {
   width: 100%;
-  margin-top: 100px;
   padding: 50px;
+  margin-top: 30px;
   display: flex;
   border-top: 3px solid rgb(195, 195, 195);
   justify-content: space-around;
@@ -157,4 +160,43 @@
 
 .room {
   color: gray;
+}
+
+.dm-hidden {
+  display: none;
+}
+
+.dm-menu {
+  display: flex;
+  justify-content: end;
+  margin: 30px 130px 0 0;
+  font-size: 20px;
+}
+
+.dm_room-create {
+  width: 180px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: cadetblue;
+  margin-right: 10px;
+}
+
+.dm-list {
+  width: 220px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: cadetblue;
+  margin-left: 10px;
+}
+
+.dm_room-create:hover {
+  background-color: rgb(222, 255, 255);
+  transition: background-color .5s;
+}
+
+.dm-list:hover {
+  background-color: rgb(169, 253, 197);
+  transition: background-color .5s;
 }
