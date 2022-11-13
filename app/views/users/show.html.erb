@@ -49,14 +49,19 @@
       <% end %>
     <% end %>
     <div class="email-box">
-      <%# "ダイレクトメール機能実装時link_to記述"%>
       <%= image_tag("email.png", class:"email-image", id:"direct-mail-menu") %>
     </div>
   </div>
-  <ul class="dm-menu" id="dm-menu">
-    <li class="dm_room-create">DMルームを作成</li>
-    <li class="dm-list">DMルーム一覧を表示</li>
-  </ul>
+  <div class="dm hidden" id="dm-menu">
+    <ul class="dm-menu">
+      <% unless @user.id == current_user.id %>
+        <li class="dm_room-create"><%= link_to "DMルームを作成", new_user_direct_room_path(@user) %></li>
+      <% end %>
+      <% if @user.id == current_user.id %>
+        <li class="dm-list" id="dm-index">DMルーム一覧を表示</li>
+      <% end %>
+    </ul>
+  </div>
   <div class="room-wrapper">
     <div class="room-area">
       <p class="room-text">チャットルーム一覧</p>  
@@ -68,17 +73,16 @@
         <% end %>
       </div>
     </div>
-    <div class="dm-room hidden" id="dm-list">
-      <div class="dm-room-area">
-        <p class="dm-room-text">DMルーム一覧</p>  
-        <div class="dm-rooms">
-          <%# @chat_rooms.each do |chat_room| %>
-            <div class="dm-room-name-put">
-              <%#= link_to chat_room.name, chat_room_path(chat_room), class:"room" %>
-            </div>
-          <%# end %>
-        </div>
+    <div class="room-area hidden" id="dm-list">
+      <p class="room-text">DMルーム一覧</p>  
+      <div class="rooms">
+        <%# @chat_rooms.each do |chat_room| %>
+          <div class="room-name-put">
+            <%#= link_to chat_room.name, chat_room_path(chat_room), class:"room" %>
+          </div>
+        <%# end %>
       </div>
+    </div>
     </div>
   </div>
 </div>

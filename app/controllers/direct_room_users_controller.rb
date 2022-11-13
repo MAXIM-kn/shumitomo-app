@@ -1,2 +1,0 @@
-class DirectRoomUsersController < ApplicationController
-end
