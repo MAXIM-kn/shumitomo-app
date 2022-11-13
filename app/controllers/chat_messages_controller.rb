@@ -24,7 +24,7 @@ class ChatMessagesController < ApplicationController
   end
 
   def set_chat_room_user
-    @chat_room_user = ChatRoomUser.where(params[:id])
+    @chat_room_user = ChatRoomUser.where(chat_room_id: params[:chat_room_id])
   end
 
   def set_chat_room

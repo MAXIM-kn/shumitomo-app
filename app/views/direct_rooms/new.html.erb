@@ -1,0 +1,20 @@
+<%= render "shared/second-header"%>
+
+
+<div class="dm-container">
+  <div class="room-main">
+    <div class="dm-heading-area">
+      <div class="heading">DMルーム作成</div>
+    </div>
+    <%= form_with model: [@user, @direct_room], url: user_direct_rooms_path, class: 'registration-from', local: true do |f| %>
+      <div class="dm-user-info">
+        <p class="info-text"><%= @user.nickname %>さんとDMを始めますか？</p>
+      </div>
+      <input name="direct_room[users_id][]" type="hidden" value=<%= @user.id %>>
+      <input name="direct_room[users_id][]" type="hidden" value=<%= current_user.id %>>
+      <div class="dm-btn-area">
+        <%= f.submit "始める" ,class:"click-botton" %>
+      </div>
+    <% end %>
+  </div>
+</div>

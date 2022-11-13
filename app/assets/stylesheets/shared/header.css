@@ -32,7 +32,6 @@ li {
   font-size: 20px;
   font-family: 'Mochiy Pop One', sans-serif;
   margin-right: 30px;
-  border-radius: 10px;
 }
 
 .login:hover {
@@ -47,7 +46,6 @@ li {
   width: 200px;
   font-size: 20px;
   font-family: 'Mochiy Pop One', sans-serif;
-  border-radius: 10px;
 }
 
 .sign-up:hover {
@@ -63,7 +61,6 @@ li {
   font-size: 20px;
   font-family: 'Mochiy Pop One', sans-serif;
   margin-right: 30px;
-  border-radius: 10px;
 }
 
 .user-nickname:hover {
@@ -78,7 +75,6 @@ li {
   width: 200px;
   font-size: 20px;
   font-family: 'Mochiy Pop One', sans-serif;
-  border-radius: 10px;
 }
 
 .logout:hover {

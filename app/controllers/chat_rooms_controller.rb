@@ -20,7 +20,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
-    @chat_room_user = ChatRoomUser.find_by(params[:id])
+    @chat_room_user = ChatRoomUser.find_by(chat_room_id: params[:id])
   end
 
   def edit
@@ -46,7 +46,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def join
-    chat_room_user =ChatRoomUser.find_by(params[:id])
+    chat_room_user =ChatRoomUser.find(params[:id])
     @chat_room_user = chat_room_user.chat_room
     @chat_room_user.users << current_user
     @chat_room_user.save
