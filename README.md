@@ -62,8 +62,9 @@
 
 ## direct_rooms テーブル
 
-|Column|Type|Options|
-|------|----|-------|
+| Column  |  Type  | Options    |
+| ------- | ------ | -----------|
+| subject | string | null: fale |
 
 ### Association
 
@@ -75,7 +76,7 @@
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | user           | references | null: false, foreign_key: true |
-| direct_room_id | references | null: false, foreign_key: true |
+| direct_room    | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -87,7 +88,7 @@
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | user           | references | null: false, foreign_key: true |
-| direct_room_id | references | null: false, foreign_key: true |
+| direct_room    | references | null: false, foreign_key: true |
 
 ### Association
 
