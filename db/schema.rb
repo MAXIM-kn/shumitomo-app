@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_11_071943) do
+ActiveRecord::Schema.define(version: 2022_11_14_040107) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 2022_11_11_071943) do
     t.index ["owner_id"], name: "index_chat_rooms_on_owner_id"
   end
 
+  create_table "direct_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content", null: false
+    t.bigint "direct_room_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["direct_room_id"], name: "index_direct_messages_on_direct_room_id"
+    t.index ["user_id"], name: "index_direct_messages_on_user_id"
+  end
+
   create_table "direct_room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "direct_room_id", null: false
     t.bigint "user_id", null: false
@@ -79,6 +89,7 @@ ActiveRecord::Schema.define(version: 2022_11_11_071943) do
   end
 
   create_table "direct_rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "subject"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -104,6 +115,8 @@ ActiveRecord::Schema.define(version: 2022_11_11_071943) do
   add_foreign_key "chat_room_users", "users"
   add_foreign_key "chat_rooms", "categories"
   add_foreign_key "chat_rooms", "users", column: "owner_id"
+  add_foreign_key "direct_messages", "direct_rooms"
+  add_foreign_key "direct_messages", "users"
   add_foreign_key "direct_room_users", "direct_rooms"
   add_foreign_key "direct_room_users", "users"
 end

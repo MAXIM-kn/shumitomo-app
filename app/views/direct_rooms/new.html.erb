@@ -8,10 +8,11 @@
     </div>
     <%= form_with model: [@user, @direct_room], url: user_direct_rooms_path, class: 'registration-from', local: true do |f| %>
       <div class="dm-user-info">
+        <%= f.text_field :subject, class:"subject-input", placeholder:"件名を記入して下さい", maxlength:"45" %>
         <p class="info-text"><%= @user.nickname %>さんとDMを始めますか？</p>
       </div>
-      <input name="direct_room[users_id][]" type="hidden" value=<%= @user.id %>>
-      <input name="direct_room[users_id][]" type="hidden" value=<%= current_user.id %>>
+      <input name="direct_room[user_ids][]" type="hidden" value=<%= @user.id %>>
+      <input name="direct_room[user_ids][]" type="hidden" value=<%= current_user.id %>>
       <div class="dm-btn-area">
         <%= f.submit "始める" ,class:"click-botton" %>
       </div>

@@ -76,11 +76,11 @@
     <div class="room-area hidden" id="dm-list">
       <p class="room-text">DMルーム一覧</p>  
       <div class="rooms">
-        <%# @chat_rooms.each do |chat_room| %>
+        <% @direct_rooms.each do |direct_rooms| %>
           <div class="room-name-put">
-            <%#= link_to chat_room.name, chat_room_path(chat_room), class:"room" %>
+            <%= link_to direct_rooms.subject,  user_direct_room_direct_messages_path(@user, direct_rooms), class:"room" %>
           </div>
-        <%# end %>
+        <% end %>
       </div>
     </div>
     </div>
