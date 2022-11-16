@@ -78,7 +78,7 @@
       <div class="rooms">
         <% @direct_rooms.each do |direct_rooms| %>
           <div class="room-name-put">
-            <%= link_to direct_rooms.id, user_direct_messages_path(direct_rooms), class:"room" %>
+            <%= link_to direct_rooms.subject,  user_direct_room_direct_messages_path(@user, direct_rooms), class:"room" %>
           </div>
         <% end %>
       </div>
