@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :set_follow, only: [:follows, :followers]
+  
   def show
     @user = User.find(params[:id])
     @chat_rooms = @user.chat_rooms
@@ -9,13 +10,17 @@ class UsersController < ApplicationController
   end
 
   def follows
-    user = User.find(params[:id])
-    @users = user.following_user.page(params[:page]).per(3).reverse_order
   end
   
   def followers
-    user = User.find(params[:id])
-    @users = user.follower_user.page(params[:page]).per(3).reverse_order
   end
+
+  private
+
+  def set_follow
+    user = User.find(params[:id])
+    @users = user.following_user.page(params[:page]).per(20).order('updated_at DESC')
+  end
+  
 
 end

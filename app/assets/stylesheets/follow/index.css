@@ -1,0 +1,22 @@
+.follow-container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  background-color: blue;
+}
+
+.fw {
+  text-align: center;
+}
+
+.follows-wrap {
+  width: 50%;
+  overflow-y: scroll;
+  border: solid;
+}
+
+.followers-wrap {
+  width: 50%;
+  overflow-y: scroll;
+}
+

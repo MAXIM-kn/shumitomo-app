@@ -1,7 +1,14 @@
+.mypage-contents {
+  background-image: url(background-mypage.jpg);
+  background-size: auto;
+  background-color:rgba(255,255,255,0.4);
+	background-blend-mode: lighten;
+}
+
 .my-box {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  padding-top: 80px;
 }
  
 .my-heading {
@@ -16,8 +23,17 @@
 .user-image-area {
   text-align: center;
   margin-top: 50px;
-  font-size: 30px;
   font-weight: 600;
+  font-size: 30px;
+  color: rgb(10, 107, 32);
+}
+
+.profile-text {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .image-nill-display {
@@ -42,14 +58,6 @@
   color: gray;
 }
 
-.profile-text {
-  text-align: center;
-  margin-top: 60px;
-  height: 50px;
-  font-size: 30px;
-  font-weight: 600;
-}
-
 .profile-area {
   display: flex;
   justify-content: center;
@@ -58,74 +66,60 @@
 .profile {
   width: 800px;
   height: 200px;
-  margin-top: 50px;
+  margin: 50px 0 20px 0;
   padding: 12px;
   font-size: 25px;
   border: 4px solid rgb(229, 239, 239);
   border-radius: 10px;
+  background-color: white;
 }
 
 .selection-field {
   display: flex;
-  margin-top: 20px;
+  padding-bottom: 50px;
 }
 
 .follower {
-  width: 100px;
   margin-left: 312px;
   font-size: 20px;
-  padding: 7px;
+  font-weight: 600;
+  padding: 10px;
   text-align: center;
   color: white;
   background-color: rgb(93, 172, 245);
-  border-radius: 20px;
-  font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.follower a {
+  color: white;
+}
+
+.followed a {
+  color: white;
 }
 
 .followed {
-  width: 130px;
   margin-left: 50px;
+  font-weight: 600;
   font-size: 20px;
-  padding: 7px;
+  padding: 10px;
   text-align: center;
   color: white;
   background-color: rgb(93, 172, 245);
-  border-radius: 20px;
-  font-family: 'Mochiy Pop One', sans-serif;
-}
-
-.follower-count-box {
-  width: 40px;
-  margin-left: 20px;
-  background-color: rgb(93, 172, 245);
-  border-radius: 10px;
 }
 
 .email-box {
-  margin-left: 150px;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .email-image {
-  width: 40px;
   height: 40px;
-}
-
-.followed-botton-area {
-  width: 150px;
-  margin-left: 70px;
-  font-size: 20px;
-  padding: 7px;
-  text-align: center;
-  color: white;
-  background-color: rgb(93, 172, 245);
-  border-radius: 20px;
-  font-family: 'Mochiy Pop One', sans-serif;
+  width: 40px;
 }
 
 .room-wrapper {
   width: 100%;
   padding: 50px;
-  margin-top: 30px;
   display: flex;
   border-top: 3px solid rgb(195, 195, 195);
   justify-content: space-around;
@@ -162,21 +156,9 @@
   color: gray;
 }
 
-.dm-hidden {
-  display: none;
-}
-
-.dm-menu {
-  display: flex;
-  justify-content: end;
-  margin: 30px 130px 0 0;
-  font-size: 20px;
-}
-
 .dm_room-create {
   width: 180px;
   padding: 10px;
-  border-radius: 10px;
   font-weight: 600;
   color: cadetblue;
   margin-right: 10px;
@@ -199,4 +181,24 @@
 .dm-list:hover {
   background-color: rgb(169, 253, 197);
   transition: background-color .5s;
+}
+
+.follower-count-box {
+  text-align: center;
+}
+
+.followed-botton-area {
+  width: 450px;
+}
+
+.f-btn {
+  display: block;
+  width: 175px;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 300px;
+  font-weight: 600;
+  background-color: rgb(2, 200, 85);
+  color: white;
 }
