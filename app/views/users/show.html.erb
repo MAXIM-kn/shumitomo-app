@@ -2,11 +2,15 @@
   <div class="mypage-contents">
     <div class="my-box">
       <div class="my-heading"><%= "#{@user.nickname}さんのマイページ" %></div>
-      <div class="email-box">
-        <% unless @user.id == current_user.id %>
-          <%= link_to image_tag("email.png", class:"email-image", id:"direct-mail-menu"), new_user_direct_room_path(@user) %>
-        <% end %>
-      </div>
+    </div>
+    <div class="email-box">
+      <% unless @user.id == current_user.id %>
+        <%= link_to image_tag("email.png", class:"menu-image"), new_user_direct_room_path(@user) %>
+      <% end %>
+      <% if @user.id == current_user.id %>
+        <%= link_to image_tag("edit.png", class:"menu-image"), edit_user_path %>
+      <% end %>
+      <%= link_to image_tag("home.png", class:"menu-image"), root_path %>
     </div>
     <div class="user-image-area">
       <p class= "profile-text">Profile</p>

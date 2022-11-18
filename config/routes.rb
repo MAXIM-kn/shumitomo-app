@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'chat_rooms#index'
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :edit, :update] do
     member do
       get :follows, :followers
     end

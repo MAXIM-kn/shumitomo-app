@@ -22,7 +22,6 @@
 
 .user-image-area {
   text-align: center;
-  margin-top: 50px;
   font-weight: 600;
   font-size: 30px;
   color: rgb(10, 107, 32);
@@ -30,7 +29,7 @@
 
 .profile-text {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 20px;
   font-size: 50px;
   font-weight: 600;
   font-family: 'Times New Roman', Times, serif;
@@ -109,12 +108,15 @@
 
 .email-box {
   display: inline-block;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 0 600px;
 }
 
-.email-image {
+.menu-image {
   height: 40px;
   width: 40px;
+  margin: 20px;
 }
 
 .room-wrapper {

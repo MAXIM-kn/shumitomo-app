@@ -15,12 +15,19 @@ class UsersController < ApplicationController
   def followers
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+  end
+
   private
 
   def set_follow
     user = User.find(params[:id])
-    @users = user.following_user.page(params[:page]).per(20).order('updated_at DESC')
+    @users_following = user.following_user.page(params[:page]).per(20).order('updated_at DESC')
+    @users_follower = user.follower_user.page(params[:page]).per(20).order('updated_at DESC')
   end
-  
 
 end
