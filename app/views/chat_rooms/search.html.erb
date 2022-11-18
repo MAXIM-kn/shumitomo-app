@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+<div class="room-container">
+  <% @chat_rooms.each_slice(3) do |chat_rooms| %>
+    <div class="room-title-area">
+      <% chat_rooms.each do |chat_room| %>
+        <div class="contents">
+          <div class= "room-title-lists">
+            <ul>
+              <li><%= link_to chat_room.name, chat_room_path(chat_room) %></li>
+              <% if chat_room.image.present?%>
+                <li><%= image_tag chat_room.image.variant(resize: '400x400'), class: "image" %></li>
+              <% else %>
+                <div class="image-list">
+                  <p class="image-content">no<br>image<p>
+                </div>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

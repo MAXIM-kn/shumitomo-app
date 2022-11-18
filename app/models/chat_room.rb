@@ -13,4 +13,11 @@ class ChatRoom < ApplicationRecord
   validates :genre_id    , presence: :true
   validates :genre_id, numericality: { other_than: 1, message: "can't be blank" }
 
+  def self.search(search)
+    if search != ""
+      ChatRoom.where('name LIKE(?)', "%#{search}%")
+    else
+      @chat_rooms = ChatRoom.where(genre_id: params[:category_id])
+    end
+  end
 end
