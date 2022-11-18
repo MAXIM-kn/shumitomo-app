@@ -1,66 +1,67 @@
-<%= render "shared/second-header"%>
-
-<div class="mypage-contents">
-  <div class="my-box">
-    <div class="my-heading"><%= "#{@user.nickname}さんのマイページ" %></div>
-  </div>
-  <div class="user-image-area">
-    プロフィール画像
-    <% if @user.image.present?%>
-    <div class="image-display">
-      <div class="image-outer">
-        <div class="image-item">
-          <%= @user.image %>
-        </div>
-      </div>
+<div class="mypage-container">
+  <div class="mypage-contents">
+    <div class="my-box">
+      <div class="my-heading"><%= "#{@user.nickname}さんのマイページ" %></div>
     </div>
-    <% else %>
-      <div class="image-nill-display">
-        <div class="image-nill-outer">
-           <p class="image-nill-item">no<br>image<p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <p class="profile-text">プロフィール</p>
-  <div class="profile-area">
-    <div class="profile">
-      <%= @user.profile %>
-    </div>
-  </div>
-  <% if user_signed_in? %>
-  <div class="selection-field">
-    <div class="follower">
-      フォロー      
-    </div>
-    <div class="follower-count-box"></div>
-    <div class="followed">
-      フォロワー
-    </div>
-    <div class="follower-count-box"></div>
-  <% end %>
-    <% if user_signed_in? %>
+    <div class="email-box">
       <% unless @user.id == current_user.id %>
-        <div class="followed-botton-area">
-          <div class="followed-botton">
-            フォローする
+        <%= link_to image_tag("email.png", class:"menu-image"), new_user_direct_room_path(@user) %>
+      <% end %>
+      <% if @user.id == current_user.id %>
+        <%= link_to image_tag("edit.png", class:"menu-image"), edit_user_path %>
+      <% end %>
+      <%= link_to image_tag("home.png", class:"menu-image"), root_path %>
+    </div>
+    <div class="user-image-area">
+      <p class= "profile-text">Profile</p>
+      <% if @user.image.present?%>
+      <div class="image-display">
+        <div class="image-outer">
+          <div class="image-item">
+            <%= @user.image %>
+          </div>
+        </div>
+      </div>
+      <% else %>
+        <div class="image-nill-display">
+          <div class="image-nill-outer">
+            <p class="image-nill-item">no<br>image<p>
           </div>
         </div>
       <% end %>
-    <% end %>
-    <div class="email-box">
-      <%= image_tag("email.png", class:"email-image", id:"direct-mail-menu") %>
     </div>
-  </div>
-  <div class="dm hidden" id="dm-menu">
-    <ul class="dm-menu">
-      <% unless @user.id == current_user.id %>
-        <li class="dm_room-create"><%= link_to "DMルームを作成", new_user_direct_room_path(@user) %></li>
+    <div class="profile-area">
+      <div class="profile">
+        <%= @user.profile %>
+      </div>
+    </div>
+    <div class="selection-field">
+      <% if user_signed_in? %>
+      <div class="follower">
+        <%= link_to "フォロー", follows_user_path(@user), class:"follows" %>
+        <div class="follower-count-box">
+          <%= @following_users.count %>
+        </div>    
+      </div>
+      <div class="followed">
+        <%= link_to "フォロワー", followers_user_path(@user), class:"followers" %>
+        <div class="follower-count-box">
+          <%= @follower_users.count %>
+        </div>
+      </div>
+      <div class="followed-botton-area">
+        <% if current_user != @user %>
+          <% if current_user.following?(@user) %>
+          <div class="followed-botton">
+            <%= link_to 'フォローを外す', user_relationships_path(@user.id), method: :delete, class: "f-btn danger" %>
+          <% else %>
+            <%= link_to 'フォローする', user_relationships_path(@user.id), method: :post, class:"f-btn success" %>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
       <% end %>
-      <% if @user.id == current_user.id %>
-        <li class="dm-list" id="dm-index">DMルーム一覧を表示</li>
-      <% end %>
-    </ul>
+    </div>
   </div>
   <div class="room-wrapper">
     <div class="room-area">
@@ -73,16 +74,17 @@
         <% end %>
       </div>
     </div>
-    <div class="room-area hidden" id="dm-list">
-      <p class="room-text">DMルーム一覧</p>  
-      <div class="rooms">
-        <% @direct_rooms.each do |direct_rooms| %>
-          <div class="room-name-put">
-            <%= link_to direct_rooms.subject,  user_direct_room_direct_messages_path(@user, direct_rooms), class:"room" %>
-          </div>
-        <% end %>
+    <% if @user.id == current_user.id %>
+      <div class="room-area" id="dm-list">
+        <p class="room-text">DMルーム一覧</p>  
+        <div class="rooms">
+          <% @direct_rooms.each do |direct_rooms| %>
+            <div class="room-name-put">
+              <%= link_to direct_rooms.subject,  user_direct_room_direct_messages_path(@user, direct_rooms), class:"room" %>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-    </div>
+    <% end %>
   </div>
 </div>

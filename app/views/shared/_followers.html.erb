@@ -1,0 +1,11 @@
+<div class="followers-wrap">
+  <p class="fw text">フォロワー list</p>
+  <div class="fw-area">
+    <div class="list followers">
+      <% @users_follower.each do |user| %>
+        
+        <%= link_to user.nickname, user_path(user), class:"fw-nickname" %>
+      <% end %>
+    </div>
+  </div>
+</div>
