@@ -3,9 +3,10 @@
     <div class="title-name">
       <%= link_to image_tag("title-logo.jpg", class:"title-icon"), root_path %>
     </div>
-    <form class="search-form" action="https://shumitomo-app.herokuapp.com/" method="get" id="search-form">
-      <input type="search" class='input-box' placeholder='キーワードを入力'>
-      <input type="submit" name="submit" value="検索" class="submit-search">
+    <%= form_with(url: search_chat_rooms_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "キーワードを入力", class: "input-box" %>
+      <%= form.submit "検索", class: "submit-search" %>
+    <% end %>
     </form>
     <div class="devise-lists">
       <% if user_signed_in? %>

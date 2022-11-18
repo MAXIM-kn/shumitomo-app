@@ -53,6 +53,11 @@ class ChatRoomsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @genres = Genre.where(:id => 2..8)
+    @chat_rooms = ChatRoom.search(params[:keyword])
+  end
+
   private
 
   def chat_room_user_params
