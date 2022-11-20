@@ -1,6 +1,7 @@
 class ChatMessagesController < ApplicationController
   before_action :set_chat_room_user, only: [:index, :create]
   before_action :set_chat_room, only: [:index, :create]
+  before_action :joined_move_to_index, only: :index
 
   def index
     @chat_message = ChatMessage.new
@@ -29,6 +30,13 @@ class ChatMessagesController < ApplicationController
 
   def set_chat_room
     @chat_room = ChatRoom.find(params[:chat_room_id])
+  end
+
+  def joined_move_to_index
+    @chat_room = ChatRoom.find(params[:chat_room_id])
+    unless ChatRoomUser.exists?(chat_room_id: @chat_room.id, user_id: current_user.id)
+      redirect_to root_path
+    end
   end
 
 end
