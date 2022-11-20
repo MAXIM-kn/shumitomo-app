@@ -4,11 +4,13 @@
       <div class="my-heading"><%= "#{@user.nickname}さんのマイページ" %></div>
     </div>
     <div class="email-box">
-      <% unless @user.id == current_user.id %>
-        <%= link_to image_tag("email.png", class:"menu-image"), new_user_direct_room_path(@user) %>
-      <% end %>
-      <% if @user.id == current_user.id %>
-        <%= link_to image_tag("edit.png", class:"menu-image"), edit_user_path %>
+      <% if user_signed_in? %>
+        <% unless @user.id == current_user.id %>
+          <%= link_to image_tag("email.png", class:"menu-image"), new_user_direct_room_path(@user) %>
+        <% end %>
+        <% if @user.id == current_user.id %>
+          <%= link_to image_tag("edit.png", class:"menu-image"), edit_user_path %>
+        <% end %>
       <% end %>
       <%= link_to image_tag("home.png", class:"menu-image"), root_path %>
     </div>
@@ -18,7 +20,7 @@
       <div class="image-display">
         <div class="image-outer">
           <div class="image-item">
-            <%= @user.image %>
+            <%= image_tag(@user.image, class:"user-image") %>
           </div>
         </div>
       </div>
@@ -74,17 +76,19 @@
         <% end %>
       </div>
     </div>
-    <% if @user.id == current_user.id %>
-      <div class="room-area" id="dm-list">
-        <p class="room-text">DMルーム一覧</p>  
-        <div class="rooms">
-          <% @direct_rooms.each do |direct_rooms| %>
-            <div class="room-name-put">
-              <%= link_to direct_rooms.subject,  user_direct_room_direct_messages_path(@user, direct_rooms), class:"room" %>
-            </div>
-          <% end %>
+    <% if user_signed_in? %>
+      <% if @user.id == current_user.id %>
+        <div class="room-area" id="dm-list">
+          <p class="room-text">DMルーム一覧</p>  
+          <div class="rooms">
+            <% @direct_rooms.each do |direct_rooms| %>
+              <div class="room-name-put">
+                <%= link_to direct_rooms.subject,  user_direct_room_direct_messages_path(@user, direct_rooms), class:"room" %>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
