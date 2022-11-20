@@ -1,38 +1,43 @@
-<%= render "shared/second-header"%>
-
-<div class="container">
-  <div class="room-main">
-    <div class="heading-area">
-      <div class="heading">ルーム編集</div>
+<div class="user-edit-container">
+  <div class="edit-heading">
+    <p class="edit-text">マイページの編集</p>
+  </div>
+  <div class="edit-main">
+    <div class="edit-wrap">
+      <%= form_with model: @user, id: "user_form", url: user_path, class: 'registration-from', local: true do |f| %>
+        <div class="edit-area">
+          <p class="edit-profile-content">ニックネームの変更</p>
+          <div class="edit-input-area">
+            <%= f.text_field :nickname, class:"edit-nickname-input", placeholder:"ニックネームを記入", maxlength:"25" %>
+          </div>
+        </div>
+        <div class="edit-area">
+          <p class="edit-profile-content">メールアドレスの変更</p>
+          <div class="edit-input-area">
+            <%= f.text_field :email, class:"edit-nickname-input", placeholder:"メールアドレスを記入", maxlength:"25" %>
+          </div>
+        </div>
+        <div class="edit-area">
+          <p class="edit-profile-content">プロフィールアイコンの設定</p>
+          <div class="image-previews-area">
+            <div class="image-previews">
+              <div id="previews"></div>
+            </div>
+          </div>
+          <div class="edit-image">
+            <%= f.label :image, "画像をアップロード", class: "edit-image-input-btn", id:"item-image"%>
+            <%= f.file_field :image, class: "image-form"%>
+          </div>
+          <p class="edit-profile-content">プロフィールの編集</p>
+          <div class="edit-input-area">
+            <%= f.text_area :profile, class:"edit-profile-input", placeholder:"プロフィールを記入" %>
+          </div>
+          <div class="btn-area">
+            <%= f.submit "更新する" ,class:"click-botton" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <%= form_with model: @user, url: user_path, method: :patch, class: 'registration-from', local: true do |f| %>
-      <%= render 'shared/error_messages', model: f.object %>
-      <div class ="room-contents">
-        <div class="room-filed">
-          <p class="room-name-text">ルーム名</p>
-          <span class="required">（必須）</span>
-        </div>
-      </div>
-      <div class="input-name-area">
-        <%= f.text_field :nickname, class:"room-name-input", placeholder:"ルーム名を記入して下さい", maxlength:"25" %>
-      </div>
-      <div class="select-area">
-        <div class="select-inner">
-          <p class="select-text">プロフィール画像の設定</p>
-          <span class="category-any">（任意）</span>
-        </div>
-      </div>
-      <div class="select-image">
-        <%= f.label :image, "画像をアップロード", class: "image-input-btn", id:"item-image"%>
-        <%= f.file_field :image, class: "image-form"%>
-      </div>
-      </div>
-        <div class="introduction-area">
-            <%= f.text_area :profile, class:"introduction-text", placeholder:"ルームの内容を記入して下さい" %>
-        </div>
-        <div class="btn-area">
-          <%= f.submit "更新する" ,class:"click-botton" %>
-        </div>
-    <% end %>
   </div>
 </div>
+    

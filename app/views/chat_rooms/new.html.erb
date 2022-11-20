@@ -30,7 +30,6 @@
         <div class="select-image">
           <%= f.label :image, "画像をアップロード", class: "image-input-btn", id:"item-image"%>
           <%= f.file_field :image, class: "image-form"%>
-
         </div>
         <div class="categories">
           <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
