@@ -2,7 +2,6 @@ class ChatRoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_chat_room, only: [:show, :edit, :update]
   before_action :move_to_index, only: :edit
-  before_action :joined_move_to_index, only: :join
 
   def index
     @genres = Genre.where(:id => 2..8)
@@ -50,11 +49,12 @@ class ChatRoomsController < ApplicationController
   end
 
   def join
-    chat_room_user =ChatRoomUser.find(params[:id])
+    @chat_room = ChatRoom.find(params[:id])
+    chat_room_user =ChatRoomUser.find_by(chat_room_id: params[:id])
     @chat_room_user = chat_room_user.chat_room
     @chat_room_user.users << current_user
     @chat_room_user.save
-    redirect_to root_path
+    redirect_to chat_room_chat_messages_path(@chat_room)
   end
 
   def search
@@ -79,13 +79,6 @@ class ChatRoomsController < ApplicationController
   def move_to_index
     @chat_room_user = ChatRoomUser.find_by(chat_room_id: params[:id])
     unless @chat_room_user.user == current_user
-      redirect_to action: :index
-    end
-  end
-
-  def joined_move_to_index
-    @chat_room_user = ChatRoomUser.find(params[:id])
-    if ChatRoomUser.exists?(id: @chat_room_user.id, user_id: current_user.id)
       redirect_to action: :index
     end
   end

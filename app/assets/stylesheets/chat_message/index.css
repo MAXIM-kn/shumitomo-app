@@ -15,6 +15,7 @@
 }
 
 .users-name-area {
+  height: 760px;
   overflow-y: auto;
 }
 
