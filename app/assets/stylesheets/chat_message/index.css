@@ -20,12 +20,13 @@
 
 .user-names {
   display: block;
-  font-size: 25px;
-  padding: 20px;
+  font-size: 22px;
   color: gray;
+  padding-top: 4px;
+  margin-left: 15px;
 }
 
-.user-names:hover {
+.chat-index-users-area:hover {
   background-color: rgb(206, 254, 254);
 }
 
@@ -180,4 +181,15 @@
 
 .chat-message-image {
   margin: 20px 0;
+}
+
+.image-users {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.chat-index-users-area {
+  display: flex;
+  padding: 15px;
 }
