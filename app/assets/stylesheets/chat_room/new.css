@@ -10,6 +10,7 @@
   margin: 100px 0;
   background-color: white;
   border-radius: 10px;
+  box-shadow: 0 0 5px 1px  rgb(210, 211, 210);
 } 
 
 .room-contents {
@@ -26,7 +27,7 @@
 .room-filed {
   display: flex;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .input-name-area {
@@ -36,14 +37,14 @@
 }
 
 .required {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 600;
   color: red;
 }
 
 .room-name-input {
   height: 50px;
-  font-size: 25px;
+  font-size: 22px;
   padding: 10px;
   border: 2px solid rgb(229, 239, 239);
   border-radius: 10px;
@@ -51,7 +52,7 @@
 
 .category {
   margin-top: 50px;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -71,14 +72,14 @@
 .select-inner {
   display: flex;
   justify-content: center;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 600;
   margin: 50px;
 }
 
 .select-area {
   display: flex;
-  margin: 50px 0 0 200px;
+  margin: 50px 0 0 240px;
 }
 
 .category-area {
@@ -112,7 +113,7 @@
 
 .introduction-info {
   text-align: center;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 600;
 }
 

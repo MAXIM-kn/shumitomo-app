@@ -3,7 +3,7 @@
     <%= chat_message.user.nickname %>
   </div>
   <div class="message-time">
-    <%= l chat_message.created_at %>
+    <%= chat_message.created_at.to_s(:datetime_jp) %>
   </div>
 </div>
 <div class="chat-message-contents">

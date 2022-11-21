@@ -18,12 +18,12 @@
           <%= image_tag("menu.png", class:"menu-img", id:"menu") %>
           <div class="hidden" id="menu-list">
             <ul class="menu-list">
+              <% if ChatRoomUser.exists?(chat_room_id: @chat_room.id, user_id: current_user.id) %>
+                <li class="menu-btn"><%= link_to "入室", chat_room_chat_messages_path(@chat_room), class:"menu-text" %></li>
+              <% end %>
               <% if current_user.id == @chat_room_user.user_id %>
                 <li class="menu-btn"><%= link_to "編集", edit_chat_room_path(@chat_room), class:"menu-text" %></li>
                 <li class="menu-btn"><%= link_to "削除", chat_room_path(@chat_room_user), method: :delete, class:"menu-text" %></li>
-              <% end %>
-              <% if ChatRoomUser.exists?(chat_room_id: @chat_room.id, user_id: current_user.id) %>
-                <li class="menu-btn"><%= link_to "入室", chat_room_chat_messages_path(@chat_room), class:"menu-text" %></li>
               <% end %>
             </ul>
           </div>
