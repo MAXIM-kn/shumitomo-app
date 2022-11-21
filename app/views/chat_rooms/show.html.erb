@@ -2,6 +2,9 @@
 
 <div class="container">
   <div class="room-main">
+    <div class="user-count-area">
+      現在<span class="users-count"><%= @chat_room.users.count %>名</span>のユーザーが参加しています
+    </div>
     <div class="heading-area">
       <div class="heading">
         <%= @chat_room.name %>

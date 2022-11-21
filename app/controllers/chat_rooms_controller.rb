@@ -1,5 +1,5 @@
 class ChatRoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :destroy, :join]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy, :join, :withdrawal]
   before_action :set_chat_room, only: [:show, :edit, :update]
   before_action :move_to_index, only: :edit
 
