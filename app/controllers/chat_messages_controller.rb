@@ -1,4 +1,5 @@
 class ChatMessagesController < ApplicationController
+  before_action :authenticate_user!, only: :index
   before_action :set_chat_room_user, only: [:index, :create]
   before_action :set_chat_room, only: [:index, :create]
   before_action :joined_move_to_index, only: :index

@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     member do
       get :join
     end
+    member do
+      get :withdrawal
+    end
     resources :chat_messages, only: [:index, :create]
   end
   resources :categories, only: [:index]

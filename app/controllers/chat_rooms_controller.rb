@@ -57,6 +57,19 @@ class ChatRoomsController < ApplicationController
     redirect_to chat_room_chat_messages_path(@chat_room)
   end
 
+  def withdrawal
+    chat_room = ChatRoom.find(params[:id])
+    chat_room_user =ChatRoomUser.find_by(user_id: current_user)
+    if chat_room_user.destroy
+      if chat_room.owner_id == current_user.id
+        chat_room.destroy
+        redirect_to root_path
+      else
+        redirect_to root_path
+      end
+    end
+  end
+
   def search
     @genres = Genre.where(:id => 2..8)
     @chat_rooms = ChatRoom.search(params[:keyword])
