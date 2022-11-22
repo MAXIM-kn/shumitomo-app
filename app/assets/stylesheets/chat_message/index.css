@@ -194,3 +194,9 @@
   display: flex;
   padding: 15px;
 }
+
+.wdays {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 10px;
+}
