@@ -4,6 +4,9 @@
   </div>
   <div class="message-time">
     <%= direct_message.created_at.to_s(:datetime_jp) %>
+    <% wdays = ['( 日 )','( 月 )','( 火 )','( 水 )','( 木 )','( 金 )','( 土 )'] %>
+    <% day = direct_message.created_at.to_s(:wday_jp) %>
+    <span class="wdays"><%= wdays[day.to_i]%></span>
   </div>
 </div>
 <div class="chat-message-contents">
