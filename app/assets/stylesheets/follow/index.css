@@ -24,7 +24,6 @@
   display: flex;
   justify-content: center;
   height: 700px;
-  
 }
 
 .list {
@@ -32,12 +31,21 @@
   height: 100%;
   background-color: white;
   overflow-y: scroll;
-  background-color: rgb(255, 255, 247);
-  display: flex;
-  flex-direction: column;
 }
 
 .fw-nickname {
+  line-height: 23px;
   font-size: 25px;
   padding: 10px;
+  margin-left: 10px;
+}
+
+.fw-nickname:hover {
+  color: rgb(0, 165, 165);
+}
+
+.user-contents {
+  display: flex;
+  padding: 10px;
+  margin-left: 20px;
 }
