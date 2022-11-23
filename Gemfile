@@ -60,6 +60,7 @@ gem 'active_hash'
 gem 'pry-rails'
 gem 'kaminari'
 gem "aws-sdk-s3", require: false
+gem 'gemoji'
 group :production do
   gem 'pg'
 end
