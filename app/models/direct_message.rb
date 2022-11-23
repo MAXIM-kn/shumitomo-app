@@ -2,7 +2,7 @@ class DirectMessage < ApplicationRecord
 
   belongs_to :user
   belongs_to :direct_room, optional: true
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
 
   validates :content, presence: true, unless: :was_attached?
 

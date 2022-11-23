@@ -1,4 +1,5 @@
 class DirectMessagesController < ApplicationController
+  before_action :authenticate_user!, only: :index
 
   def index
     @direct_room = DirectRoom.find(params[:direct_room_id])

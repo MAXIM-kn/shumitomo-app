@@ -81,9 +81,12 @@
         <div class="room-area" id="dm-list">
           <p class="room-text">DMルーム一覧</p>  
           <div class="rooms">
-            <% @direct_rooms.each do |direct_rooms| %>
+            <% @direct_rooms.each do |direct_room| %>
               <div class="room-name-put">
-                <%= link_to direct_rooms.subject,  user_direct_room_direct_messages_path(@user, direct_rooms), class:"room" %>
+                <%= link_to direct_room.subject, user_direct_room_direct_messages_path(@user, direct_room), class:"room" %>
+                <% direct_room.users.where.not(id: current_user.id).each do |user| %>
+                  <span class="dm-user-nickname">（<%= user.nickname %>）</span>
+                <% end %>
               </div>
             <% end %>
           </div>

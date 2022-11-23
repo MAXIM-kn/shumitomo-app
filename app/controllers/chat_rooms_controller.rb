@@ -44,7 +44,7 @@ class ChatRoomsController < ApplicationController
       flash[:success] = "削除が完了しました"
       redirect_to root_path
     else
-      render :index
+      render :show
     end
   end
 

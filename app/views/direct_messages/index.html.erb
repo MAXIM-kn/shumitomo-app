@@ -8,7 +8,7 @@
         <div class="top-page">
           <%= link_to image_tag("home.png", class:"top-page-icon"), root_path %>
           <div class="leaving">
-            <%= link_to "退室する", "#", class:"leaving-text" %>
+            <%= link_to "ルームを閉じる", user_direct_room_path(@user, @direct_room), method: :delete, class:"leaving-text" %>
           </div>
         </div>
       </div>

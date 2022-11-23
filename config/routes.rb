@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get :follows, :followers
     end
     resource :relationships, only: [:create, :destroy]
-    resources :direct_rooms, only: [:new, :create] do
+    resources :direct_rooms, only: [:new, :create, :destroy] do
       resources :direct_messages, only: [:index, :create]
     end
   end

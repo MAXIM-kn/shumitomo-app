@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
                 
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
   has_many :chat_room_users
   has_many :chat_rooms, through: :chat_room_users
   has_many :chat_messages
