@@ -16,11 +16,11 @@
         </div>
       </div>
     </div>
-    <div class="chat_messages-wrap">
+    <div class="chat_messages-wrap" id="chat-message-contents">
       <%= render partial: "shared/chat_message", collection: @chat_messages %>
     </div>
     <div class="form-message">
-      <%= form_with model: [@chat_room, @chat_message], class: 'message-input', local: true do |f| %>
+      <%= form_with model: [@chat_room, @chat_message], id: "form", class: 'message-input', remote: true do |f| %>
         <label class="form-image">
           <%= image_tag("photo.png", class:"form-photo-icon") %>
           <%= f.file_field :image, class:"hidden" %>
@@ -32,7 +32,7 @@
           <span class="image-file">
             <%= image_tag("submit.png", class:"submit-icon") %>
           </span>
-          <%= f.submit "", class: 'hidden' %>
+          <%= f.submit "", class: 'hidden', id: "submit" %>
         </label>
       <% end %>
     </div>
