@@ -71,7 +71,7 @@
       <div class="rooms">
         <% @chat_rooms.each do |chat_room| %>
           <div class="room-name-put">
-            <%= link_to chat_room.name, chat_room_path(chat_room), class:"room" %>
+            <%= link_to chat_room.name, chat_room_path(chat_room), class:"room", data: { 'turbolinks': false } %>
           </div>
         <% end %>
       </div>
