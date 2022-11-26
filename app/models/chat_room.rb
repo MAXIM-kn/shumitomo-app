@@ -7,6 +7,8 @@ class ChatRoom < ApplicationRecord
   has_many :users, through: :chat_room_users
   has_many :chat_messages, dependent: :destroy
   belongs_to :category, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :users_like, class_name: 'User', through: :likes
   
   validates :name,         presence: :true
   validates :introduction, presence: :true
@@ -20,4 +22,9 @@ class ChatRoom < ApplicationRecord
       @chat_rooms = ChatRoom.where(genre_id: params[:category_id])
     end
   end
+
+  def liked?(user)
+    likes.where(user_id: user.id).exists?
+ end
+
 end

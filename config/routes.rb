@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
   end
   resources :chat_rooms do
+    resource :likes, only: [:create, :destroy]
     collection do
       get 'search'
     end

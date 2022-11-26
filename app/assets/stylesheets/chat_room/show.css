@@ -124,3 +124,34 @@
   color: rgb(4, 167, 255);
   font-weight: 600;
 }
+
+.like-area {
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  border: solid rgb(194, 255, 200);
+  display: flex;
+  margin-left: 200px;
+}
+
+.like-image {
+  width: 30px;
+  height: 30px;
+  margin: 7px 0 0 10px;
+}
+.like-text {
+  padding: 8px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.like-area:hover {
+  background-color: rgb(194, 255, 200);
+}
+
+.likes-count {
+  font-size: 20px;
+  padding: 8px;
+  margin-left: 15px;
+}
