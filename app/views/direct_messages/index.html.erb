@@ -13,11 +13,11 @@
         </div>
       </div>
     </div>
-    <div class="chat_messages-wrap">
+    <div class="chat_messages-wrap" id="direct_messages-wrap">
       <%= render partial: "shared/direct_message", collection: @direct_messages %>
     </div>
     <div class="direct-form-message">
-      <%= form_with model: [@user, @direct_room, @direct_message], class: 'message-input', local: true do |f| %>
+      <%= form_with model: [@user, @direct_room, @direct_message], id: "form", class: 'message-input', remote: true do |f| %>
         <label class="form-image">
           <%= image_tag("photo.png", class:"form-photo-icon") %>
           <%= f.file_field :image, class:"hidden" %>
