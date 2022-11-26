@@ -10,12 +10,16 @@ class ChatMessagesController < ApplicationController
   end
 
   def create
+    @chat_messages = @chat_room.chat_messages.includes(:user)
     @chat_message = @chat_room.chat_messages.new(chat_message_params)
-    if @chat_message.save
-      redirect_to chat_room_chat_messages_path(@chat_room)    
-    else
-      @chat_messages = @chat_room.chat_messages.includes(:user)
-      render :index
+    respond_to do |format|
+      if @chat_message.save
+        format.html { redirect_to chat_room_chat_messages_path(@chat_room) }
+        format.js 
+      else
+        @chat_messages = @chat_room.chat_messages.includes(:user)
+        format.html { render :index }
+      end
     end
   end
 

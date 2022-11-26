@@ -12,11 +12,15 @@ class DirectMessagesController < ApplicationController
     @direct_room = DirectRoom.find(params[:direct_room_id])
     @user = User.find_by(id: current_user.id)
     @direct_message = @direct_room.direct_messages.new(direct_message_params)
-    if @direct_message.save
-      redirect_to user_direct_room_direct_messages_path
-    else
-      @direct_messages = @direct_room.chat_messages.includes(:user)
-      render :index
+    respond_to do |format|
+      if @direct_message.save
+        @direct_messages = @direct_room.direct_messages.includes(:user)
+        format.html { redirect_to user_direct_room_direct_messages_path }
+        format.js 
+      else
+        @direct_messages = @direct_room.direct_messages.includes(:user)
+        format.html { render :index }
+      end
     end
   end
 
