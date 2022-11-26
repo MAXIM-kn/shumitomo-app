@@ -23,10 +23,10 @@
       <%= form_with model: [@chat_room, @chat_message], id: "form", class: 'message-input', remote: true do |f| %>
         <label class="form-image">
           <%= image_tag("photo.png", class:"form-photo-icon") %>
-          <%= f.file_field :image, class:"hidden" %>
+          <%= f.file_field :image, id: "image", class:"hidden" %>
         </label>
         <div class="message-area">
-          <%= f.text_field :content, class: 'form-message-input', placeholder: "メッセージを入力"%>
+          <%= f.text_field :content, id: "content", class: 'form-message-input', placeholder: "メッセージを入力"%>
         </div>
         <label class="submit">
           <span class="image-file">
