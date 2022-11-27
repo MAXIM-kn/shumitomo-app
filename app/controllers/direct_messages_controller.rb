@@ -14,6 +14,7 @@ class DirectMessagesController < ApplicationController
     @direct_message = @direct_room.direct_messages.new(direct_message_params)
     respond_to do |format|
       if @direct_message.save
+        @direct_room.create_notification_direct_message!(current_user, @direct_message.id)
         @direct_messages = @direct_room.direct_messages.includes(:user)
         format.html { redirect_to user_direct_room_direct_messages_path }
         format.js 

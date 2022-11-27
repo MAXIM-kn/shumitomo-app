@@ -24,4 +24,5 @@ Rails.application.routes.draw do
     resources :chat_messages, only: [:index, :create]
   end
   resources :categories, only: [:index]
+  resources :notifications, only: :index
 end
