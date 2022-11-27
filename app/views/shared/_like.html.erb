@@ -1,0 +1,13 @@
+<% if @chat_room.liked?(current_user) %>
+  <div class="like-area">
+    <%= image_tag("like.png", class:"like-image") %>
+    <%= link_to "いいね", chat_room_likes_path(@chat_room), class:"like-text", method: :delete, remote: true %>
+    <span class="likes-count"><%= @chat_room.likes.count %></span>
+  </div>
+<% else %>
+  <div class="like-area">
+    <%= image_tag("like.png", class:"like-image") %>
+    <%= link_to "いいね", chat_room_likes_path(@chat_room), class:"like-text", method: :post, remote: true %>
+    <span class="likes-count"><%= @chat_room.likes.count %></span>
+  </div>
+<% end %>

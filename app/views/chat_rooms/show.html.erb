@@ -53,19 +53,9 @@
     </div>
     <div class="participate">
       <% if user_signed_in? %>
-        <% if @chat_room.liked?(current_user) %>
-          <div class="like-area">
-            <%= image_tag("like.png", class:"like-image") %>
-            <%= link_to "いいね", chat_room_likes_path(@chat_room), class:"like-text", method: :delete %>
-            <span class="likes-count"><%= @chat_room.likes.count %></span>
-          </div>
-        <% else %>
-          <div class="like-area">
-            <%= image_tag("like.png", class:"like-image") %>
-            <%= link_to "いいね", chat_room_likes_path(@chat_room), class:"like-text", method: :post %>
-            <span class="likes-count"><%= @chat_room.likes.count %></span>
-          </div>
-        <% end %>
+        <div class="likes" id="likes_button">
+          <%= render partial: "shared/like", locals: { chat_room: @chat_room } %>
+        </div>
         <% unless ChatRoomUser.exists?(chat_room_id: @chat_room.id, user_id: current_user.id) %>
         <div class="participate-area">
           <%= link_to "参加する", join_chat_room_path(@chat_room), class: "participate-btn" %>
