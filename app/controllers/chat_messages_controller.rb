@@ -14,7 +14,7 @@ class ChatMessagesController < ApplicationController
     @chat_message = @chat_room.chat_messages.new(chat_message_params)
     respond_to do |format|
       if @chat_message.save
-        @chat_room.create_notification_chat_message!(current_user, @chat_message.id)
+        @chat_message.create_notification_chat_message!(current_user, @chat_message.id)
         format.html { redirect_to chat_room_chat_messages_path(@chat_room) }
         format.js 
       else
