@@ -21,7 +21,7 @@ class DirectMessage < ApplicationRecord
 
   def save_notification_direct_message!(current_user, direct_message_id, visited_id)
     notification = current_user.active_notifications.new(
-      direct_room_id: id,
+      direct_room_id: direct_room_id,
       direct_message_id: direct_message_id,
       visited_id: visited_id,
       action: 'direct_message'

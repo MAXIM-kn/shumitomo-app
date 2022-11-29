@@ -21,7 +21,7 @@ class ChatMessage < ApplicationRecord
 
   def save_notification_chat_message!(current_user, chat_message_id, visited_id)
     notification = current_user.active_notifications.new(
-      chat_room_id: id,
+      chat_room_id: chat_room_id,
       chat_message_id: chat_message_id,
       visited_id: visited_id,
       action: 'chat_message'

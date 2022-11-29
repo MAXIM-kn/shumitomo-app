@@ -26,7 +26,7 @@ class ChatRoom < ApplicationRecord
 
   def liked?(user)
     likes.where(user_id: user.id).exists?
- end
+  end
 
   def create_notification_like!(current_user, user_id)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and chat_room_id = ? and action = ? ", current_user, user_id, id, 'like'])
@@ -42,4 +42,5 @@ class ChatRoom < ApplicationRecord
       notification.save if notification.valid?
     end
   end
+
 end

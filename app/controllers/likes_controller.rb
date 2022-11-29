@@ -4,7 +4,7 @@ class LikesController < ApplicationController
     @chat_room = ChatRoom.find(params[:chat_room_id])
     @like = Like.new(user_id: current_user.id, chat_room_id: params[:chat_room_id])
     @like.save
-    @chat_room.create_notification_like!(current_user, @like.user.id) 
+    @chat_room.create_notification_like!(current_user, @chat_room.owner_id) 
     respond_to do |format|
         format.html { redirect_to chat_room_path(@chat_room) }
         format.js
