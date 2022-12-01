@@ -29,6 +29,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy_all
+    user = User.find(params[:id])
+    @notifications = current_user.passive_notifications.destroy_all
+    redirect_to user_path(user)
+  end
+
   private
 
   def set_follow

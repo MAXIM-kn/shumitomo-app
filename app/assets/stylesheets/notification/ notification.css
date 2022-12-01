@@ -8,6 +8,12 @@
   border: 3px double gray;
   border-radius: 10px;
   background-color: white;
+
+}
+
+.users-index {
+  height: 500px;
+  overflow-y: auto;
 }
 
 .notification-text {
@@ -57,13 +63,13 @@
   color: rgb(0, 155, 155);
 }
 
-.notification-contents {
+.notification-main {
   border-bottom: 1px solid rgb(220, 220, 220);
   margin: 0 5px;
   padding: 5px;
 }
 
-.notification-visitor-wrap {
+.notification-contents {
   font-size: 0;
 }
 
@@ -96,8 +102,21 @@
 .moderate-font {
   display: block;
   font-size: 14px;
-  margin-top: 5px;
+  margin-top: 10px;
   color: gray;
   display: flex;
   justify-content: flex-end;
+}
+
+.garbage {
+  height: 20px;
+  width: 20px;
+  margin: 20px 0 0 80px;
+}
+
+.notification-destroy {
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px;
+  margin-top: 15px;
 }

@@ -1,8 +1,8 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
 
-<div class="notification-contents">
-  <div class="notification-visitor-wrap">
+<div class="notification-main">
+  <div class="notification-contents">
     <% if visitor.image.present? %>
       <%= image_tag(visitor.image, class: "notification-visitor-image")%>
     <% end %>

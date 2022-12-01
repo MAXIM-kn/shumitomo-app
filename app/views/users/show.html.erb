@@ -24,6 +24,10 @@
                 <% else %>
                     <p class="notification-nil">通知はありません</p>
                 <% end %>
+                <% if @notifications.present? %>
+                  <%= link_to image_tag("garbage.png", class:"garbage"), destroy_all_user_path %>
+                  <p class="notification-destroy">通知を全件削除</p>
+                <% end %>
             </div>
           </div>
           <%= link_to image_tag("edit.png", class:"menu-image"), edit_user_path, data: { 'turbolinks': false } %>
