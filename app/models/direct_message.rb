@@ -11,7 +11,7 @@ class DirectMessage < ApplicationRecord
     self.image.attached?
   end
 
-  def create_notification_direct_message!(current_user, direct_message_id)
+  def create_notification_direct_message!(current_user, direct_message_id, user_id)
     temp_ids = DirectMessage.select(:user_id).where(direct_room_id: id).where.not(user_id: current_user.id).distinct
     temp_ids.each do |temp_id|
       save_notification_direct_message!(current_user, direct_message_id, temp_id['user_id'])

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @direct_rooms = @user.direct_rooms
     @following_users = @user.following_user
     @follower_users = @user.follower_user
+    notification_index
   end
 
   def follows
@@ -38,6 +39,14 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :email, :image, :profile)
+  end
+
+  def notification_index
+    @notifications = current_user.passive_notifications
+    @notifications = @notifications.where.not(visitor_id: current_user.id)
+    @notifications.where(checked: false).each do |notification|
+      notification.update_attributes(checked: true)
+    end
   end
 
 end

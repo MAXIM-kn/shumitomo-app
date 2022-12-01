@@ -11,7 +11,20 @@
         <% if @user.id == current_user.id %>
           <%= image_tag("notification.png", class:"menu-image", id:"notification") %>
           <div class="notification">
-            <%= render "shared/notification" %>
+            <div class="notification-wrap">
+              <div class="notification-text-area">
+                <%= image_tag("return.png", class:"return-btn", id:"return")%>
+                <p class="notification-text">通知一覧</p>
+              </div>
+              <div class="text-border"></div>
+              <% if @notifications.exists? %>
+                <div class="users-index">
+                  <%= render partial: "shared/notification", collection: @notifications %>
+                </div>
+                <% else %>
+                    <p class="notification-nil">通知はありません</p>
+                <% end %>
+            </div>
           </div>
           <%= link_to image_tag("edit.png", class:"menu-image"), edit_user_path, data: { 'turbolinks': false } %>
         <% end %>
@@ -20,7 +33,7 @@
     </div>
     <div class="user-image-area">
       <p class= "profile-text">Profile</p>
-      <% if @user.image.present?%>
+      <% if @user.image.present? %>
       <div class="image-display">
         <div class="image-outer">
           <div class="image-item">
@@ -89,7 +102,7 @@
               <div class="room-name-put">
                 <%= link_to direct_room.subject, user_direct_room_direct_messages_path(@user, direct_room), class:"room" %>
                 <% direct_room.users.where.not(id: current_user.id).each do |user| %>
-                  <span class="dm-user-nickname">（<%= user.nickname %>）</span>
+                  <span class="dm-user-nickname">　to <%= user.nickname %></span>
                 <% end %>
               </div>
             <% end %>

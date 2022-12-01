@@ -10,11 +10,11 @@ class ChatMessage < ApplicationRecord
   def was_attached?
     self.image.attached?
   end
-
-  def create_notification_chat_message!(current_user, chat_message_id)
-    temp_ids = ChatMessage.select(:user_id).where(chat_room_id: id).where.not(user_id: current_user.id).distinct
+  
+  def create_notification_chat_message!(current_user, chat_message_id, chat_room)
+    temp_ids = chat_room.users.where.not(id: current_user.id).distinct
     temp_ids.each do |temp_id|
-      save_notification_chat_message!(current_user, chat_message_id, temp_id['user_id'])
+      save_notification_chat_message!(current_user, chat_message_id, temp_id.id)
     end
     save_notification_chat_message!(current_user, chat_message_id, user_id) if temp_ids.blank?
   end
@@ -22,7 +22,7 @@ class ChatMessage < ApplicationRecord
   def save_notification_chat_message!(current_user, chat_message_id, visited_id)
     notification = current_user.active_notifications.new(
       chat_room_id: chat_room_id,
-      chat_message_id: chat_message_id,
+      chat_message_id: id,
       visited_id: visited_id,
       action: 'chat_message'
     )
@@ -31,5 +31,5 @@ class ChatMessage < ApplicationRecord
     end
     notification.save if notification.valid?
   end
-  
+
 end
