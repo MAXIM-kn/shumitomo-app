@@ -9,7 +9,7 @@ class ChatRoomCategory
     validates :user_id
     validates :owner_id
    end
-   validates :genre_id, numericality: { other_than: 1, message: "can't be blank" }
+   validates :genre_id, numericality: { other_than: 1, message: "が選択されていません" }
 
    def save
     category  = Category.create

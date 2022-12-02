@@ -78,6 +78,12 @@
   background-color: blue;
 }
 
+.error-text {
+  font-size: 20px;
+  text-align: center;
+  color: red;
+}
+
 .login-box {
   display: flex;
   justify-content: center;

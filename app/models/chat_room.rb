@@ -14,7 +14,7 @@ class ChatRoom < ApplicationRecord
   validates :name,         presence: :true
   validates :introduction, presence: :true
   validates :genre_id    , presence: :true
-  validates :genre_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :genre_id, numericality: { other_than: 1 , message: "が選択されていません" }
 
   def self.search(search)
     if search != ""

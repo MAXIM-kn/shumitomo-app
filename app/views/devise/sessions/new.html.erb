@@ -1,5 +1,9 @@
 <%= render "shared/second-header"%>
 
+<div class="error-text">
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+</div>
 <div class="login-box">
   <div class="heading">ログイン</div>
 </div>
