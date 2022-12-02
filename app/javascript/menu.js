@@ -11,5 +11,4 @@ const menu = () => {
   });
 };
 
-
 window.addEventListener('load', menu)

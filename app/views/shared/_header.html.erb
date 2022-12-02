@@ -10,7 +10,7 @@
     </form>
     <div class="devise-lists">
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></li>
+        <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" , data: { 'turbolinks': false } %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>

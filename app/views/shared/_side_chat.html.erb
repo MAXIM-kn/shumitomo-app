@@ -8,7 +8,7 @@
         <% else %>
           <%= image_tag("nil-image.png", class: "image-users")%>
         <% end %>
-        <%= link_to c.user.nickname, user_path(c.user), class:"user-names" %>
+        <%= link_to c.user.nickname, user_path(c.user), class:"user-names", data: { 'turbolinks': false } %>
       </div>  
     <% end %>
   </div>

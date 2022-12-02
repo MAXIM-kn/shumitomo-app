@@ -1,0 +1,42 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<% notification.update_attributes(checked: true) %>
+
+<div class="notification-main">
+  <div class="notification-contents">
+    <% if visitor.image.present? %>
+      <%= image_tag(visitor.image, class: "notification-visitor-image")%>
+    <% end %>
+    <%= link_to visitor.nickname, user_path(visitor), class:"visitor-nickname"%>
+    <% if notification.direct_message %>
+      <p class="later-text">さんから</p>
+    <% else %>
+      <p class="later-text">さんが</p>
+    <% end %>
+    <% case notification.action %>
+    <% when 'follow' then %>
+      <p class="visited-notification-text"><span class="visited">あなたを</span>フォローしました</p>
+    <% when 'like' then %>
+        <%= link_to "あなたのチャットルーム", notification.chat_room, class:"visited", data: { 'turbolinks': false } %>
+        <p class="visited-notification-text">にいいねしました</p>
+    <% when 'chat_message' then %>
+      <% chat_room = notification.chat_room %>
+      <% if notification.chat_room.owner_id == visited.id %>
+        <%= link_to "あなたのチャットルーム", chat_room_chat_messages_path(chat_room), class:"visited" %>
+        <p class="visited-notification-text">に投稿しました</p>
+      <% else %>
+        <%= link_to chat_room.name, chat_room_chat_messages_path(chat_room), class:"visited" %>
+        <p class="visited-notification-text">に投稿しました</p>
+        <span class="visitor-message"><%= notification.chat_message.content %></span>
+      <% end %>
+    <% when 'direct_message' then %>
+      <% direct_room = notification.direct_room_id %>
+      <%= link_to "DM", user_direct_room_direct_messages_path(@user, direct_room), class:"visited" %>
+      <p class="visited-notification-text">が届きました</p>
+      <span class="visitor-message"><%= notification.direct_message.content %></span>
+    <% end %>
+    <span class="moderate-font"><%= "#{time_ago_in_words(notification.created_at)}前" %></span>
+  </div>
+  
+</div>
+

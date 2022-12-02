@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :set_follow, only: [:follows, :followers]
-  
+  before_action :notification_index, only: [:show]
+
   def show
     @user = User.find(params[:id])
     @chat_rooms = @user.chat_rooms
@@ -28,6 +29,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy_all
+    user = User.find(params[:id])
+    @notifications = current_user.passive_notifications.destroy_all
+    redirect_to user_path(user)
+  end
+
   private
 
   def set_follow
@@ -38,6 +45,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :email, :image, :profile)
+  end
+
+  def notification_index
+    @notifications = current_user.passive_notifications
+    @notifications = @notifications.where.not(visitor_id: current_user.id)
   end
 
 end
