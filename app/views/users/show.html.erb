@@ -12,7 +12,7 @@
           <% if unchecked_notifications.any? %>
             <span class="notifications-count"><%= @notifications.count %></span>
           <% end %>
-          <%= image_tag("notification.png", class:"menu-image", id:"notification-btn") %>
+          <%= link_to image_tag("notification.png", class:"menu-image", id:"notification-btn"), check_user_path, remote: true %>
           <div class="notification hidden" id="notification-wrap">
             <div class="notification-wrap">
               <div class="notification-text-area">

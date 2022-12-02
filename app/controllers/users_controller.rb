@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :set_follow, only: [:follows, :followers]
-  before_action :notification_index, only: [:show]
+  before_action :notification_index, only: [:show, :check]
 
   def show
     @user = User.find(params[:id])
@@ -33,6 +33,12 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @notifications = current_user.passive_notifications.destroy_all
     redirect_to user_path(user)
+  end
+
+  def check
+    @notifications.where(checked: false).each do |notification|
+      notification.update_attributes(checked: true)
+    end
   end
 
   private

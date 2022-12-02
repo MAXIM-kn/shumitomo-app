@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member do
       get :destroy_all
     end
+    member do
+      get :check
+    end
     resource :relationships, only: [:create, :destroy]
     resources :direct_rooms, only: [:new, :create, :destroy] do
       resources :direct_messages, only: [:index, :create]
