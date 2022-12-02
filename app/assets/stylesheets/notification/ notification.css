@@ -8,7 +8,6 @@
   border: 3px double gray;
   border-radius: 10px;
   background-color: white;
-
 }
 
 .users-index {
@@ -119,4 +118,16 @@
   vertical-align: top;
   padding: 3px;
   margin-top: 15px;
+}
+
+.notifications-count {
+  height: 33px;
+  width: 33px;
+  position: absolute;
+  left:  900px;
+  background-color: rgb(251, 95, 111);
+  border-radius: 50%;
+  text-align: center;
+  padding: 4px;
+  color: white;
 }

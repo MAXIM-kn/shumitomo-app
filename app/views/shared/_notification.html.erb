@@ -1,5 +1,6 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
+<% notification.update_attributes(checked: true) %>
 
 <div class="notification-main">
   <div class="notification-contents">
@@ -36,5 +37,6 @@
     <% end %>
     <span class="moderate-font"><%= "#{time_ago_in_words(notification.created_at)}前" %></span>
   </div>
+  
 </div>
 

@@ -10,6 +10,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../menu")
 require('../preview')
+require('../notification')
 
 window.$ = jQuery;
 
