@@ -136,6 +136,8 @@
   height: 500px;
   background-color: white;
   border-radius: 20px;
+  padding: 10px;
+  overflow-y: auto;
 }
 
 .room-text {
@@ -143,7 +145,6 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 20px;
-  padding: 10px;
 }
 
 .rooms {
@@ -158,6 +159,10 @@
 
 .room {
   color: gray;
+}
+
+.room:hover {
+  color: rgb(0, 194, 194);
 }
 
 .dm_room-create {
@@ -214,6 +219,8 @@
 }
 
 .dm-user-nickname {
+  padding-top: 12px;
+  font-size: 20px;
   color: gray;
 }
 
