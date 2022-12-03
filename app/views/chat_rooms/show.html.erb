@@ -1,4 +1,7 @@
 <%= render "shared/second-header"%>
+<div class="text-success-area">
+  <span class="text-success"><%= flash[:notice] %></span>
+</div>
 
 <div class="container">
   <div class="room-main">
@@ -23,7 +26,7 @@
               <% end %>
               <% if current_user.id == @chat_room_user.user_id %>
                 <li class="menu-btn"><%= link_to "編集", edit_chat_room_path(@chat_room), class:"menu-text" %></li>
-                <li class="menu-btn"><%= link_to "削除", chat_room_path(@chat_room_user), method: :delete, class:"menu-text" %></li>
+                <li class="menu-btn"><%= link_to "削除", chat_room_path(@chat_room_user), method: :delete, class:"menu-text", id:"delete-btn", data: {confirm: "チャットルームを削除しますか？"}  %></li>
               <% end %>
             </ul>
           </div>
@@ -58,7 +61,7 @@
         </div>
         <% unless ChatRoomUser.exists?(chat_room_id: @chat_room.id, user_id: current_user.id) %>
         <div class="participate-area">
-          <%= link_to "参加する", join_chat_room_path(@chat_room), class: "participate-btn" %>
+          <%= link_to "参加する", join_chat_room_path(@chat_room), class: "participate-btn", data: {confirm: "チャットルームに参加しますか"} %>
         </div>
         <% end %>
       <% end %>
