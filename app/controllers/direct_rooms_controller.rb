@@ -20,8 +20,8 @@ class DirectRoomsController < ApplicationController
     direct_room_user = DirectRoomUser.find_by(direct_room_id: params[:id])
     @direct_room_user = direct_room_user.direct_room
     if @direct_room_user.destroy
-      flash[:success] = "削除が完了しました"
       redirect_to root_path
+      flash[:notice] = "DMルームを閉じました"
     end
   end
 

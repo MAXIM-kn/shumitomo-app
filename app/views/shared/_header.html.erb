@@ -23,4 +23,7 @@
       <li><%= link_to category.name, categories_path(category_id: category.id), class: "set"%></li>
     <% end %>
   </ul>
+  <div class="text-success-area">
+    <span class="text-success"><%= flash[:notice] %></span>
+  </div>
 </header>

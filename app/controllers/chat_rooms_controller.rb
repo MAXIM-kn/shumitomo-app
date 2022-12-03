@@ -16,6 +16,7 @@ class ChatRoomsController < ApplicationController
     if @chat_room_category.valid?
       @chat_room_category.save
       redirect_to root_path
+      flash[:notice] = "チャットルームを投稿しました"
     else
       render :new
     end
@@ -32,6 +33,7 @@ class ChatRoomsController < ApplicationController
   def update
     if @chat_room.update(chat_room_user_params)
       redirect_to chat_room_path
+      flash[:notice] = "更新しました"
     else
       render :edit
     end
@@ -41,8 +43,8 @@ class ChatRoomsController < ApplicationController
     chat_room_user =ChatRoomUser.find(params[:id])
     @chat_room_user = chat_room_user.chat_room
     if @chat_room_user.destroy
-      flash[:success] = "削除が完了しました"
       redirect_to root_path
+      flash[:notice] = "チャットルームを削除しました"
     else
       render :show
     end
@@ -59,14 +61,19 @@ class ChatRoomsController < ApplicationController
 
   def withdrawal
     chat_room = ChatRoom.find(params[:id])
-    chat_room_user =ChatRoomUser.find_by(user_id: current_user)
-    if chat_room_user.destroy
-      if chat_room.owner_id == current_user.id
-        chat_room.destroy
-        redirect_to root_path
-      else
-        redirect_to root_path
+    chat_room_users =ChatRoomUser.where(user_id: current_user)
+    chat_room_users.each do |chat_room_user|
+      if chat_room.id == chat_room_user.chat_room.id
+        chat_room_user.destroy
+        flash[:notice] = "チャットルームから退出しました"
       end
+    end
+    if chat_room.owner_id == current_user.id
+      chat_room.destroy
+      redirect_to root_path
+      flash[:notice] = "チャットルームを削除しました"
+    else
+      redirect_to root_path
     end
   end
 

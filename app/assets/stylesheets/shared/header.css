@@ -144,3 +144,15 @@ a {
 .frends {
   height: 40px;
 }
+
+.text-success-area {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(60, 118, 254);
+}
+
+.text-success {
+  font-size: 23px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}

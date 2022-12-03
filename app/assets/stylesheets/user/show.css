@@ -216,3 +216,16 @@
 .dm-user-nickname {
   color: gray;
 }
+
+.text-success-area-user {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(46, 123, 255);
+}
+
+.text-success-user {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius: 20px;
+}
