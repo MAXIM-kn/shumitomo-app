@@ -55,8 +55,10 @@ class UsersController < ApplicationController
   end
 
   def notification_index
-    @notifications = current_user.passive_notifications
-    @notifications = @notifications.where.not(visitor_id: current_user.id)
+    if user_signed_in?
+      @notifications = current_user.passive_notifications
+      @notifications = @notifications.where.not(visitor_id: current_user.id)
+    end
   end
 
 end
