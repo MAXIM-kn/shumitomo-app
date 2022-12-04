@@ -90,8 +90,12 @@ ActiveRecord::Schema.define(version: 2022_11_27_045840) do
 
   create_table "direct_rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "subject"
+    t.bigint "owner_id"
+    t.bigint "another_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["another_id"], name: "index_direct_rooms_on_another_id"
+    t.index ["owner_id"], name: "index_direct_rooms_on_owner_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -156,6 +160,8 @@ ActiveRecord::Schema.define(version: 2022_11_27_045840) do
   add_foreign_key "direct_messages", "users"
   add_foreign_key "direct_room_users", "direct_rooms"
   add_foreign_key "direct_room_users", "users"
+  add_foreign_key "direct_rooms", "users", column: "another_id"
+  add_foreign_key "direct_rooms", "users", column: "owner_id"
   add_foreign_key "likes", "chat_rooms"
   add_foreign_key "likes", "users"
   add_foreign_key "relationships", "users", column: "followed_id"

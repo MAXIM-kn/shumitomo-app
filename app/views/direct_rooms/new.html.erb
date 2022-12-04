@@ -1,6 +1,5 @@
 <%= render "shared/second-header"%>
 
-
 <div class="dm-container">
   <div class="room-main">
     <div class="dm-heading-area">
@@ -11,6 +10,7 @@
         <%= f.text_field :subject, class:"subject-input", placeholder:"件名を記入して下さい", maxlength:"45" %>
         <p class="info-text"><%= @user.nickname %>さんとDMを始めますか？</p>
       </div>
+      <input name="direct_room[owner_id, another_id][]" type="hidden" value=<%= @user.id %>>
       <input name="direct_room[user_ids][]" type="hidden" value=<%= @user.id %>>
       <input name="direct_room[user_ids][]" type="hidden" value=<%= current_user.id %>>
       <div class="dm-btn-area">

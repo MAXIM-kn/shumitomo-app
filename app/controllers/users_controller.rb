@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:edit, :update, :follows, :followers]
   before_action :set_follow, only: [:follows, :followers]
   before_action :notification_index, only: [:show, :check]
+  before_action :direct_rooms_search, only: :show
 
   def show
     @user = User.find(params[:id])
@@ -59,6 +60,13 @@ class UsersController < ApplicationController
       @notifications = current_user.passive_notifications
       @notifications = @notifications.where.not(visitor_id: current_user.id)
     end
+  end
+
+  def direct_rooms_search
+    user = User.find(params[:id])
+    direct_rooms = user.direct_rooms
+    @dm_owner = direct_rooms.find_by(owner_id: current_user)
+    @dm_another = direct_rooms.find_by(another_id: current_user)
   end
 
 end

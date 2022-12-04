@@ -9,8 +9,10 @@
     <div class="email-box">
       <% if user_signed_in? %>
         <% unless @user.id == current_user.id %>
-          <%= link_to image_tag("email.png", class:"menu-image"), new_user_direct_room_path(@user) %>
-        <% end %>  
+          <% unless @dm_owner.present? || @dm_another.present? %>
+            <%= link_to image_tag("email.png", class:"menu-image"), new_user_direct_room_path(@user) %>
+          <% end %>
+        <% end %> 
         <% if @user.id == current_user.id %>
           <% if unchecked_notifications.any? %>
             <span class="notifications-count"><%= @notifications.count %></span>

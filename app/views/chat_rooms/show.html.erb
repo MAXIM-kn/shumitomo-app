@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="contributor-image-area">
-      投稿者：<%= link_to @chat_room_user.user.nickname, user_path(@chat_room_user.user), class:"contributor-name" %>
+      投稿者：<%= link_to @chat_room_user.user.nickname, user_path(@chat_room_user.user), class:"contributor-name", data: { 'turbolinks': false } %>
       <% if user_signed_in? %>
         <div class="menu-area">
           <p class="memu-text">Menu</p>

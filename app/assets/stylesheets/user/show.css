@@ -132,12 +132,13 @@
 }
 
 .room-area {
-  width: 500px;
+  inline-size:  500px;
   height: 500px;
   background-color: white;
   border-radius: 20px;
   padding: 10px;
   overflow-y: auto;
+  overflow-wrap: break-word;
 }
 
 .room-text {
@@ -152,9 +153,8 @@
 }
 
 .room-name-put {
-  padding: 10px;
-  display: flex;
   font-size: 30px;
+  padding: 10px;
 }
 
 .room {
@@ -219,9 +219,12 @@
 }
 
 .dm-user-nickname {
-  padding-top: 12px;
+  display: block;
   font-size: 20px;
   color: gray;
+  padding-top: 12px;
+  margin: 0 20px;
+  float: right;
 }
 
 .text-success-area-user {

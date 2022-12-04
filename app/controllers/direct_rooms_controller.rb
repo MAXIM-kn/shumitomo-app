@@ -28,6 +28,6 @@ class DirectRoomsController < ApplicationController
   private
    
     def direct_room_params
-      params.require(:direct_room).permit(:subject, [user_ids: []])
+      params.require(:direct_room).permit(:owner_id, :another_id, :subject, [user_ids: []]).merge(owner_id: current_user.id, another_id: @user.id)
     end
 end
