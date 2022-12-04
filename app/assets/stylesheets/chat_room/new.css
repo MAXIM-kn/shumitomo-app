@@ -37,9 +37,13 @@
 }
 
 .required {
-  font-size: 22px;
-  font-weight: 600;
-  color: red;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  margin-left: 20px;
+  padding: 7px;
+  background-color: red;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .room-name-input {
@@ -59,7 +63,12 @@
 }
 
 .category-any {
-  color: blue
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  margin-left: 20px;
+  padding: 7px;
+  background-color: rgb(19, 109, 255);
+  border-radius: 5px;
 }
 
 .image-form {
@@ -79,7 +88,7 @@
 
 .select-area {
   display: flex;
-  margin: 50px 0 0 240px;
+  margin: 50px 0 0 260px;
 }
 
 .category-area {
@@ -88,9 +97,9 @@
 
 .select-image {
   line-height: 40px;
-  border: 2px solid green;
-  padding: 10px;
-  margin-left: 300px;
+  border: 2px solid rgb(1, 144, 1);
+  padding: 8px;
+  margin-left: 330px;
   border-radius: 10px;
 }
 
@@ -99,7 +108,7 @@
   height: 60px;
   border: 2px solid rgb(229, 239, 239);
   border-radius: 10px;
-  margin-left: 220px;
+  margin-left: 170px;
 }
 
 .image-form {
@@ -120,7 +129,7 @@
 .introduction {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .introduction-area {

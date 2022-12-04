@@ -14,7 +14,6 @@
 }
 
 .input-content {
-  display: flex;
   margin: 50px 0 0 480px;
 }
 
@@ -24,8 +23,12 @@
 }
 
 .indispensable {
-  font-size: 20px;
-  color: red;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  margin-left: 20px;
+  padding: 7px;
+  background-color: red;
+  border-radius: 5px;
 }
 
 .input-area {
@@ -37,8 +40,12 @@
 }
 
 .any {
-  font-size: 20px;
-  color: blue;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  margin-left: 20px;
+  padding: 7px;
+  background-color: rgb(19, 109, 255);
+  border-radius: 5px;
 }
 
 .profile-input-area {

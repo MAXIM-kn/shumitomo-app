@@ -9,35 +9,35 @@
     <div class="form-sign-input">
       <div class="input-content">
         <label class="form-text">ニックネーム</label>
-        <span class="indispensable">（必須）</span>
+        <span class="indispensable">必須</span>
       </div>
       <%= f.text_field :nickname, class:"input-area", placeholder:"ニックネームを入力して下さい", maxlength:"20" %>
     </div>
     <div class="form-sign-input">
       <div class="input-content">
         <label class="form-text">メールアドレス</label>
-        <span class="indispensable">（必須）</span>
+        <span class="indispensable">必須</span>
       </div>
       <%= f.email_field :email, class:"input-area", placeholder:"メールアドレスを入力して下さい", autofocus: true %>
     </div>
     <div class="form-sign-input">
       <div class="input-content">
         <label class="form-text">パスワード</label>
-        <span class="indispensable">（必須）</span>
+        <span class="indispensable">必須</span>
       </div>
       <%= f.password_field :password, class:"input-area", placeholder:"※半角英数字含む６文字以上で入力して下さい" %>
     </div>
     <div class="form-sign-input">
       <div class="input-content">
         <label class="form-text">パスワード（確認）</label>
-        <span class="indispensable">（必須）</span>
+        <span class="indispensable">必須</span>
       </div>
       <%= f.password_field :password_confirmation, class:"input-area", placeholder:"同じパスワードを入力して下さい" %>
     </div>
     <div class="form-sign-input">
       <div class="profile-input-content">
         <label class="form-text">プロフィール</label>
-        <span class="any">（任意）</span>
+        <span class="any">任意</span>
       </div>
       <%= f.text_area :profile, class:"profile-input-area", placeholder:"例)
 

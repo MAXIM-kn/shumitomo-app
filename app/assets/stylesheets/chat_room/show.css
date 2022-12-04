@@ -25,6 +25,10 @@
   font-weight: 600;
 }
 
+.contributor-name:hover {
+  color: rgb(0, 194, 194);
+}
+
 .image-display {
   height: 350px;
   display: flex;
