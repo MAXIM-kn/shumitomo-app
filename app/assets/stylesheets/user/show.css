@@ -239,3 +239,11 @@
   font-weight: bold;
   border-radius: 20px;
 }
+
+.dm-user-link-text {
+  color: gray;
+}
+
+.dm-user-link-text:hover {
+  color: rgb(0, 194, 194);
+}
