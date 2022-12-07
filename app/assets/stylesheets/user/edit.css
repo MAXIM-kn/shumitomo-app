@@ -1,5 +1,5 @@
 .user-edit-container {
-  height: 1700px;
+  height: 1500px;
   background-color: #efefef;
 }
 
@@ -118,4 +118,55 @@
   border: 2px solid rgb(229, 239, 239);
   border-radius: 10px;
   margin: 10px 0 50px 0;
+}
+
+@media (max-width: 599px) {
+
+  .edit-text {
+    width: 400px;
+    font-size: 30px;
+  }
+
+  .edit-wrap {
+    height: 1220px;
+    width: 500px;
+  }
+
+  .edit-profile-content {
+    font-size: 17px;
+  }
+
+  .edit-nickname-input {
+    height: 40px;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid rgb(229, 239, 239);
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .image-previews {
+    width: 232px;
+    height: 232px;
+  }
+
+  .preview-image {
+    width: 232px;
+    height: 232px;
+  }
+  
+
+  .edit-image-input-btn {
+    width: 180px;
+    line-height: 50px;
+    font-size: 17px;
+  }
+
+  .edit-profile-input {
+    width: 430px;
+    height: 200px;
+    font-size: 22px;
+    margin: 10px 0 50px 0;
+  }
+  
 }

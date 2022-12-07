@@ -49,3 +49,35 @@
   padding: 10px;
   margin-left: 20px;
 }
+
+@media (max-width: 599px) {
+
+  .follow-container {
+    height: 734px;
+  }
+
+  .fw-area {
+    height: 630px;
+  }
+
+  .list {
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    overflow-y: scroll;
+  }
+
+  .fw-nickname {
+    line-height: 13px;
+    font-size: 25px;
+    padding: 5px;
+    margin-left: 10px;
+  }
+
+  .user-contents {
+    display: flex;
+    padding: 10px;
+    margin-left: 10px;
+  }
+  
+}
