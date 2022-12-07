@@ -21,3 +21,25 @@
   width: 50px;
   margin-left: 40px;
 }
+
+@media (max-width: 599px) {
+
+  .footer {
+    height: 80px;
+    font-size: 25px;
+  }
+
+  .room-frends {
+    display: block;
+    height: 40px;
+    width: 40px;
+  }
+
+  .frends {
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin-left: 40px;
+  }
+
+}
