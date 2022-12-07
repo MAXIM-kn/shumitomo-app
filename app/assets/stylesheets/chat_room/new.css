@@ -231,9 +231,7 @@
   }
 
   .title-content {
-    display: flex;
-    justify-content: center;
-    margin-left: 19px;
+    margin-left: 10px;
   }
 
 }
