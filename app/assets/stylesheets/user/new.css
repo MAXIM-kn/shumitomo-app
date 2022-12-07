@@ -131,11 +131,11 @@
     width: 290px;
     font-size: 27px;
     padding: 0 20px 20px 20px;
-    margin-right: 20px;
+    
   }
 
   .input-content {
-    margin: 50px 0 0 140px;
+    margin: 50px 0 0 150px;
   }
 
   .form-text {
@@ -145,7 +145,7 @@
   .input-area {
     width: 300px;
     padding: 8px;
-    margin: 20px 0 0 140px;
+    margin: 20px 0 0 150px;
   }
 
   .any {
@@ -159,13 +159,13 @@
   .profile-input-area {
     width: 380px;
     height: 150px;
-    margin: 30px 0 70px 100px;
+    margin: 30px 0 70px 90px;
     font-size: 16px;
   }
 
   .profile-input-content {
     display: flex;
-    margin: 50px 0 0 100px;
+    margin: 50px 0 0 90px;
   }
 
   .click-botton {
@@ -188,7 +188,7 @@
   .login-box {
     display: flex;
     justify-content: center;
-    margin: 50px;
+    margin: 50px 20px 50px 0;
   }
 
 }
