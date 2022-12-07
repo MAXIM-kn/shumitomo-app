@@ -247,3 +247,7 @@
 .dm-user-link-text:hover {
   color: rgb(0, 194, 194);
 }
+
+@media (max-width: 599px) {
+
+}
