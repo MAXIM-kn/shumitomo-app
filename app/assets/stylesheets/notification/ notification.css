@@ -131,3 +131,13 @@
   padding: 4px;
   color: white;
 }
+
+@media (max-width: 599px) {
+
+  .notifications-count {
+    height: 33px;
+    width: 33px;
+    position: absolute;
+    left:  190px;
+  }
+}

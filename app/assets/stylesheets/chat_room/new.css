@@ -71,13 +71,6 @@
   border-radius: 5px;
 }
 
-.image-form {
-  font-size: 20px;
-  width: 200px;
-  margin-right: 100px;
-  display: block;
-}
-
 .select-inner {
   display: flex;
   justify-content: center;
@@ -150,4 +143,95 @@
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 599px) {
+
+  .room-contents {
+    margin-top: 80px;
+  }
+
+  .room-main {
+    width: 500px;
+    margin: 80px 0;
+  } 
+
+  .room-filed {
+    font-size: 17px;
+  }
+
+  .required {
+    font-size: 12px;
+    padding: 5px 7px;
+  }
+
+  .room-name-input {
+    height: 42px;
+    font-size: 19px;
+    padding: 10px;
+  }
+
+  .select-area {
+    display: flex;
+    margin: 70px 0 0 30px;
+  }
+
+  .select-inner {
+    font-size: 17px;
+    margin: 0;
+  }
+
+  .select-box {
+    width: 120px;
+    height: 60px;
+    border: 2px solid rgb(229, 239, 239);
+    border-radius: 10px;
+    margin-left: 30px;
+  }
+
+  .image-form {
+    display: none;
+  }
+
+  .image-input-btn {
+    font-size: 15px;
+  }
+
+  .select-image {
+    line-height: 38px;
+    padding: 5px;
+    margin-left: 50px;
+  }
+
+  .select-box {
+    width: 120px;
+    height: 50px;
+    margin-left: 110px;
+  }
+
+  .category-any {
+    font-size: 12px;
+    padding: 5px 7px;
+    margin-right: 50px;
+  }
+
+  .category-area {
+    margin-top: 30px;
+  }
+
+  .introduction-info {
+    font-size: 17px;
+  }
+
+  .introduction-text {
+    width: 430px;
+    height: 200px;
+    padding: 10px;
+    font-size: 17px;
+  }
+
+  .title-content {
+    margin-left: 10px;
+  }
+
 }

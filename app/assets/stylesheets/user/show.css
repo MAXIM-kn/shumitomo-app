@@ -42,7 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 .image-nill-outer {
@@ -246,4 +246,109 @@
 
 .dm-user-link-text:hover {
   color: rgb(0, 194, 194);
+}
+
+@media (max-width: 599px) {
+
+  .my-box {
+    padding-top: 70px;
+  }
+
+  .my-heading {
+    width: 300px;
+    font-size: 24px;
+    padding: 0 22px 22px 22px;
+  }
+
+  .email-box {
+    margin: 10px 0 0 0;
+  }
+
+  .profile-text {
+    margin-top: 20px;
+    font-size: 35px;
+  }
+
+  .user-image {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+  }
+
+  .profile {
+    width: 450px;
+    height: 200px;
+    margin: 22px 0 20px 0;
+    padding: 12px;
+    font-size: 22px;
+  }
+
+  .image-nill-display {
+    height: 250px;
+  }
+
+  .image-nill-outer {
+    height: 100%;
+    width: 250px;
+  }
+
+  .image-nill-item {
+    padding-top: 75px;
+    font-size: 30px;
+  }
+
+  .follower {
+    margin-left: 77px;
+    font-size: 17px;
+    padding: 7px;
+  }
+
+  .followed {
+    font-size: 17px;
+    padding: 7px
+  }
+
+  .followed-botton-area {
+    width: 200px;
+  }
+
+  .room-area {
+    inline-size:  255px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .room-wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .room-text {
+    font-size: 23px;
+  }
+
+  .f-btn {
+  width: 150px;
+  padding: 7px;
+  font-size: 17px;
+  margin-left: 67px;
+}
+
+.dm-user-nickname {
+  font-size: 17px;
+  padding-top: 5px;
+  margin: 0;
+  float: right;
+}
+
+.room-name-put {
+  font-size: 22px;
+  padding: 7px;
+}
+
+.text-success-user {
+  font-size: 22px;
+}
+
 }

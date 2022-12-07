@@ -39,3 +39,32 @@
   padding-top: 70px;
   color: gray;
 }
+
+@media (max-width: 599px) {
+
+  .room-title-area {
+    height: 200px;
+    margin-top: 50px;
+  }
+
+  .room-title-lists {
+    font-size: 20px;
+  }
+
+  .image {
+    width: 130px;
+    height: 95px;
+  }
+
+  .image-list {
+    width: 130px;
+    height: 95px;
+  }
+
+  .image-content {
+    font-size: 20px;
+    margin-top: 10px;
+    padding-top: 15px;
+  }
+
+}
