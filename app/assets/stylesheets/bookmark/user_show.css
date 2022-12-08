@@ -1,0 +1,32 @@
+.bookmark-index {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 600px;
+  margin: 10px;
+  border: 3px double gray;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.bookmark-text {
+  display: inline-block;
+  font-size: 20px;
+  padding: 5px;
+  font-weight: 600;
+  margin-right: 37px;
+}
+
+.chat-room-text-bookmark {
+  display: block;
+  font-size: 20px;
+  margin: 10px 10px 0 10px;
+  padding-bottom: 10px;
+  color: gray;
+  border-bottom: solid rgb(220, 220, 220);
+}
+
+.chat-room-text-bookmark:hover {
+  color: rgb(0, 194, 194);
+}

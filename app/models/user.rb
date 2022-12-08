@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :chat_rooms_like, class_name: 'ChatRooms', through: :likes
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
   
   validates :nickname, presence: true
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze

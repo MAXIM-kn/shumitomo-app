@@ -146,7 +146,7 @@
   border-radius: 20px;
   border: solid rgb(194, 255, 200);
   display: flex;
-  margin-left: 200px;
+
 }
 
 .like-image {
@@ -177,6 +177,11 @@
   font-size: 35px;
   letter-spacing: 3px;
   color: gray;
+}
+
+.btn-contents {
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 428px) {
