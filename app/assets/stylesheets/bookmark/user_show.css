@@ -30,3 +30,8 @@
 .chat-room-text-bookmark:hover {
   color: rgb(0, 194, 194);
 }
+
+.bookmark-contents {
+  height: 550px;
+  overflow: auto;
+}

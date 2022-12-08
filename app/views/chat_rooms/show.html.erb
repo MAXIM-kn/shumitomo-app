@@ -61,7 +61,7 @@
             <%= render partial: "shared/like", locals: { chat_room: @chat_room } %>
           </div>
           <% unless ChatRoomUser.exists?(chat_room_id: @chat_room.id, user_id: current_user.id) %>
-            <div class="book-marks">
+            <div class="book-marks" id="bookmark_button">
               <%= render partial: "shared/book_mark", locals: { chat_room: @chat_room } %>
             </div>
           <% end %>

@@ -3,22 +3,26 @@ class BookmarksController < ApplicationController
   def create
     @chat_room = ChatRoom.find(params[:chat_room_id])
     @bookmark = @chat_room.bookmarks.new(user_id: current_user.id)
-    @bookmark.save
-    redirect_to request.referer
-    #respond_to do |format|
-        #format.html { redirect_to chat_room_path(@chat_room) }
-        #format.js
-    #end
+    if @bookmark.save
+      respond_to do |format|
+        format.html { redirect_to request.referer }
+        format.js
+      end
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
     @chat_room = ChatRoom.find(params[:chat_room_id])
     @bookmark = @chat_room.bookmarks.find_by(user_id: current_user.id)
-    if @bookmark.present?
-      @bookmark.destroy
-      redirect_to request.referer
+    if @bookmark.destroy
+      respond_to do |format|
+        format.html { redirect_to request.referer }
+        format.js
+      end
     else
-      redirect_to request.referer
+      redirect_to root_path
     end
   end
 

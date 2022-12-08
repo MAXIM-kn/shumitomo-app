@@ -21,13 +21,15 @@
               <p class="bookmark-text">お気に入り一覧</p>
             </div>
             <div class="text-border"></div>
-            <% if @bookmarks.exists? %>
-              <% @bookmarks.each do |bookmark| %>
-                <%= link_to bookmark.chat_room.name, chat_room_path(bookmark.chat_room), class:"chat-room-text-bookmark"%>
+            <div class="bookmark-contents">
+              <% if @bookmarks.exists? %>
+                <% @bookmarks.each do |bookmark| %>
+                  <%= link_to bookmark.chat_room.name, chat_room_path(bookmark.chat_room), class:"chat-room-text-bookmark"%>
+                <% end %>
+              <% else %>
+                <p class="notification-nil">お気に入りはありません</p>
               <% end %>
-            <% else %>
-              <p class="notification-nil">お気に入りはありません</p>
-            <% end %>
+            </div>
           </div>
           <% if unchecked_notifications.any? %>
             <span class="notifications-count"><%= @notifications.count %></span>

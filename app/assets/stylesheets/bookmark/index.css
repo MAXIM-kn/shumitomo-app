@@ -1,5 +1,14 @@
 .book-mark-area {
   display: flex;
+  width: 230px;
+  height: 50px;
+  border-radius: 20px;
+  border: solid rgb(194, 255, 200);
+  margin-left: 100px;
+}
+
+.book-mark-area-nil {
+  display: flex;
   width: 250px;
   height: 50px;
   border-radius: 20px;

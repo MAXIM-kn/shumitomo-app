@@ -1,11 +1,13 @@
 <div class="book-mark-wrap">
-  <div class="book-mark-area">
-    <% if @bookmark.present? %>
+  <% if @chat_room.bookmarked_by?(current_user) %>
+    <div class="book-mark-area">
       <p class="book-mark-ster">★</p>
-      <%= link_to "お気に入り削除", chat_room_bookmarks_path(@chat_room), method: :delete, class:"book-mark-text" %>
-    <% else %>
+      <%= link_to "お気に入り削除", chat_room_bookmarks_path(@chat_room), method: :delete, class:"book-mark-text", remote: true %>
+    </div>
+  <% else %>
+    <div class="book-mark-area-nil">
       <p class="book-mark-ster-nil">★</p>
-      <%= link_to "お気に入りに登録", chat_room_bookmarks_path(@chat_room), method: :post, class:"book-mark-text" %>
-    <% end %>
-  </div>
+      <%= link_to "お気に入りに登録", chat_room_bookmarks_path(@chat_room), method: :post, class:"book-mark-text", remote: true %>
+    </div>
+  <% end %>
 </div>
