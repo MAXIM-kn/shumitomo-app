@@ -165,8 +165,8 @@
   }
 
   .procedure-contents {
-    width: 400px;
-    margin: 70px 50px 0 15px;
+    width: 380px;
+    margin: 70px 50px 0 25px;
   }
 
   .text {
@@ -175,7 +175,7 @@
   }
 
   .procedure-link {
-    width: 300px;
+    width: 290px;
     line-height: 80px;
     display: block;
     margin-bottom: 80px;
