@@ -21,7 +21,7 @@ class ChatRoom < ApplicationRecord
     if search != ""
       ChatRoom.where('name LIKE(?)', "%#{search}%")
     else
-      @chat_rooms = ChatRoom.where(genre_id: params[:category_id])
+      @chat_rooms = ChatRoom.includes(:users)
     end
   end
 
