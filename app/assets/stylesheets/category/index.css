@@ -40,11 +40,11 @@
   color: gray;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 428px) {
 
   .room-title-area {
     height: 200px;
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   .room-title-lists {
@@ -52,13 +52,13 @@
   }
 
   .image {
-    width: 130px;
-    height: 95px;
+    width: 100px;
+    height: 85px;
   }
 
   .image-list {
-    width: 130px;
-    height: 95px;
+    width: 100px;
+    height: 85px;
   }
 
   .image-content {

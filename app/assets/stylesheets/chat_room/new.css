@@ -145,15 +145,15 @@
   display: none;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 428px) {
 
   .room-contents {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 
   .room-main {
-    width: 500px;
-    margin: 80px 0;
+    width: 400px;
+    margin: 60px 0;
   } 
 
   .room-filed {
@@ -161,32 +161,30 @@
   }
 
   .required {
-    font-size: 12px;
-    padding: 5px 7px;
+    font-size: 10px;
+    padding: 5px 5px;
   }
 
   .room-name-input {
     height: 42px;
-    font-size: 19px;
+    font-size: 17px;
     padding: 10px;
   }
 
   .select-area {
     display: flex;
-    margin: 70px 0 0 30px;
+    margin: 70px 0 0 20px;
   }
 
   .select-inner {
-    font-size: 17px;
+    font-size: 15px;
     margin: 0;
   }
 
   .select-box {
-    width: 120px;
-    height: 60px;
-    border: 2px solid rgb(229, 239, 239);
-    border-radius: 10px;
-    margin-left: 30px;
+    width: 110px;
+    height: 50px;
+    margin-left: 70px;
   }
 
   .image-form {
@@ -194,25 +192,19 @@
   }
 
   .image-input-btn {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .select-image {
-    line-height: 38px;
+    line-height: 33px;
     padding: 5px;
-    margin-left: 50px;
-  }
-
-  .select-box {
-    width: 120px;
-    height: 50px;
-    margin-left: 110px;
+    margin-left: 40px;
   }
 
   .category-any {
-    font-size: 12px;
-    padding: 5px 7px;
-    margin-right: 50px;
+    font-size: 10px;
+    padding: 5px 5px;
+    margin-right: 20px;
   }
 
   .category-area {
@@ -224,7 +216,7 @@
   }
 
   .introduction-text {
-    width: 430px;
+    width: 350px;
     height: 200px;
     padding: 10px;
     font-size: 17px;

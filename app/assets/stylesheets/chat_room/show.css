@@ -179,7 +179,7 @@
   color: gray;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 428px) {
 
   .contributor-image-area {
     font-size: 25px;
@@ -190,8 +190,8 @@
   }
 
   .image-show {
-    height: 280px;
-    width: 330px;
+    height: 250px;
+    width: 300px;
   }
 
   .contributor-image-nill-outer {
@@ -209,7 +209,7 @@
   }
 
   .room-profile {
-    width: 400px;
+    width: 350px;
     height: 200px;
     padding: 12px;
     font-size: 22px;
@@ -217,12 +217,52 @@
 
   .participate-btn {
     width: 300px;
-    font-size: 25px;
-    padding: 10px;
+    font-size: 22px;
+    padding: 7px;
   }
 
   .like-area {
-    margin-left: 50px;
+    margin-left: 30px;
+    width: 185px;
+    height: 40px;
   }
 
+  .menu-area {
+    font-size: 17px;
+    margin-top: 50px;
+  }
+
+  .menu-img {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+  }
+
+  .menu-btn {
+    width: 75px;
+    margin-left: 10px;
+  }
+  
+  .menu-text {
+    width: 75px;
+  }
+
+  .like-text {
+    padding: 6px;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+
+  .likes-count {
+    font-size: 18px;
+    padding: 6px;
+    margin-left: 15px;
+  }
+
+  .like-image {
+    width: 25px;
+    height: 25px;
+    margin: 5px 0 0 10px;
+  }
+  
 }
