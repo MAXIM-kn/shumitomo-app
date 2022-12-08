@@ -1,0 +1,32 @@
+.book-mark-area {
+  display: flex;
+  width: 250px;
+  height: 50px;
+  border-radius: 20px;
+  border: solid rgb(194, 255, 200);
+  margin-left: 100px;
+}
+
+.book-mark-ster-nil {
+  font-size: 20px;
+  padding: 8px;
+  margin-left: 15px;
+  color: rgb(96, 190, 134);
+}
+
+.book-mark-ster {
+  font-size: 20px;
+  padding: 8px;
+  margin-left: 15px;
+  color: rgb(255, 0, 247);
+}
+
+.book-mark-text {
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.book-mark-area:hover {
+  background-color: rgb(194, 255, 200);
+}

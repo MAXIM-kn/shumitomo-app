@@ -10,6 +10,7 @@ class ChatRoom < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :users_like, class_name: 'User', through: :likes
   has_many :notifications, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
   
   validates :name,         presence: :true
   validates :introduction, presence: :true
@@ -22,6 +23,10 @@ class ChatRoom < ApplicationRecord
     else
       @chat_rooms = ChatRoom.where(genre_id: params[:category_id])
     end
+  end
+
+  def bookmarked_by?(user)
+    bookmarks.where(user_id: user.id).exists?
   end
 
   def liked?(user)
