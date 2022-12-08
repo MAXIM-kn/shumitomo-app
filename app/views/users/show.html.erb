@@ -14,6 +14,21 @@
           <% end %>
         <% end %> 
         <% if @user.id == current_user.id %>
+          <%= image_tag("bookmark.png", class:"menu-image", id:"bookmark")%>
+          <div class="bookmark-index hidden" id="bookmark-wrap">
+            <div class="notification-text-area">
+              <%= image_tag("return.png", class:"return-btn", id:"return-btn-bookmark")%>
+              <p class="bookmark-text">お気に入り一覧</p>
+            </div>
+            <div class="text-border"></div>
+            <% if @bookmarks.exists? %>
+              <% @bookmarks.each do |bookmark| %>
+                <%= link_to bookmark.chat_room.name, chat_room_path(bookmark.chat_room), class:"chat-room-text-bookmark"%>
+              <% end %>
+            <% else %>
+              <p class="notification-nil">お気に入りはありません</p>
+            <% end %>
+          </div>
           <% if unchecked_notifications.any? %>
             <span class="notifications-count"><%= @notifications.count %></span>
           <% end %>
