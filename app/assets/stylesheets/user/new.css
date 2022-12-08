@@ -182,13 +182,13 @@
   }
 
   .login-btn-area {
-    margin: 70px 20px 0 0;
+    margin: 70px 0 0 0;
   }
 
   .login-box {
     display: flex;
     justify-content: center;
-    margin: 50px 20px 50px 0;
+    margin: 50px 0;
   }
 
 }
