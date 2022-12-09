@@ -25,7 +25,6 @@ class ChatRoomsController < ApplicationController
   def show
     @chat_room_user = ChatRoomUser.find_by(chat_room_id: params[:id])
     @user_joining = ChatRoomUser.where(user_id: params[:id])
-    @bookmark = @chat_room.bookmarks.find_by(user_id: current_user.id)
   end
 
   def edit
