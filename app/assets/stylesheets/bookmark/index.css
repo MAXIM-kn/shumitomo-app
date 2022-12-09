@@ -39,3 +39,7 @@
 .book-mark-area:hover {
   background-color: rgb(194, 255, 200);
 }
+
+.book-mark-area-nil:hover {
+  background-color: rgb(194, 255, 200); 
+}
