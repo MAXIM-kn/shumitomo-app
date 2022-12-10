@@ -10,7 +10,9 @@ class UsersController < ApplicationController
     @direct_rooms = @user.direct_rooms
     @following_users = @user.following_user
     @follower_users = @user.follower_user
-    @bookmarks = Bookmark.where(user_id: current_user.id)
+    if user_signed_in?
+      @bookmarks = Bookmark.where(user_id: current_user.id)
+    end
   end
 
   def follows
