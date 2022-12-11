@@ -10,12 +10,14 @@
   </div>
 </div>
 <div class="chat-message-contents">
+  <% if direct_message.content.present? %>
+    <span class="message-content" >
+      <%= direct_message.content %>
+    </span>
+  <% end %>
+</div>
+<div class="chat-message-contents">
   <div class="messages">
-    <% if direct_message.content.present? %>
-      <span class="message-content">
-        <%= direct_message.content %>
-      </span>
-    <% end %>
     <%= image_tag direct_message.image.variant(resize: '500x500'), class: "chat-message-image" if direct_message.image.attached? %>
   </div>
 </div>
