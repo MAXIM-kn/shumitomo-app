@@ -10,6 +10,10 @@ RSpec.describe User, type: :model do
       it 'nicknameとemail、passwordとpassword_confirmationが存在すれば登録できる' do
         expect(@user).to be_valid
       end
+      it 'imageが無くても登録できる' do
+        @user.image = nil
+        expect(@user).to be_valid
+      end
     end
 
     context '新規登録できないとき' do
