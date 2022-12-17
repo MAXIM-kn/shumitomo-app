@@ -8,15 +8,13 @@ ja:
         genre_id: カテゴリー
         owner_id: ユーザー
         category: カテゴリー
+      chat_message:
+        content: メッセージ
+        chat_room: チャットルーム
+        user: ユーザー
   activemodel:
     errors:
     attributes:
-      user:
-        nickname: ニックネーム
-      chat_room:
-        name: 名前
-        introduction: ルーム紹介
-        genre_id: カテゴリー
       chat_room_category:
         name: 名前
         introduction: ルーム紹介
@@ -198,5 +196,3 @@ ja:
             long: "%Y/%m/%d %H:%M"
             short: "%m/%d %H:%M"
           pm: 午後
-
- 
