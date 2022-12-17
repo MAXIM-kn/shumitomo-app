@@ -11,10 +11,11 @@ class ChatRoom < ApplicationRecord
   has_many :users_like, class_name: 'User', through: :likes
   has_many :notifications, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
-  
+
   validates :name,         presence: :true
   validates :introduction, presence: :true
   validates :genre_id    , presence: :true
+  validates :owner_id    , presence: :true, numericality: { message: "が不正です" }
   validates :genre_id, numericality: { other_than: 1 , message: "が選択されていません" }
 
   def self.search(search)

@@ -7,7 +7,7 @@ class ChatRoomCategory
     validates :introduction
     validates :genre_id
     validates :user_id
-    validates :owner_id
+    validates :owner_id, numericality: { message: "が不正です" }
    end
    validates :genre_id, numericality: { other_than: 1, message: "が選択されていません" }
 
