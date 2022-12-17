@@ -1,5 +1,13 @@
 ja:
   activerecord:
+    errors:
+    attributes:
+      chat_room:
+        name: 名前
+        introduction: ルーム紹介
+        genre_id: カテゴリー
+        owner_id: ユーザー
+        category: カテゴリー
   activemodel:
     errors:
     attributes:
